@@ -4,12 +4,12 @@ subtitle: "Dr Jacquie Tran"
 author: "1 June 2026 | ANZIAM Vic One-Day Workshop"
 format:
   revealjs:
-    theme: dark
+    theme: [night, custom.scss]
     incremental: TRUE
 filters:
   - timeline
 title-slide-attributes:
-  data-background-image: /images/jay-miller-DBurdz7Dm8Q-unsplash.jpg
+  data-background-image: /images/jay-miller-DBurdz7Dm8Q-unsplash_edited.png
   data-background-size: contain
   data-background-opacity: "0.5"
 ---
