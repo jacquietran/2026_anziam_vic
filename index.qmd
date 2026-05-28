@@ -19,7 +19,7 @@ A multidisciplinary sport scientist
 
 . . .
 
-My usual audiences are...other people working in sport!
+My usual audiences are...other people studying sport science and working in sport!
 
 . . .
 
@@ -85,7 +85,7 @@ Pursuing research to learn and apply [Bayesian modelling]{.yellow}, [network ana
 :::
 :::
 
-## Growing into "awkward adolescence"
+## Growing into "awkward adolescence" {.smaller}
 
 Technology changes:
 
@@ -103,39 +103,62 @@ Analytical practices:
 - Computer vision
 - Integrating data from multiple sources (across disciplines)
 
+Dedicated tertiary courses for sports analytics
+
 Growth in private sports data and technology providers
 
 Competitor behaviours
 
-## Research projects
-
-GPS / LPS data
-
-- Early days: Understanding physical demands of training and competition
-- Progressing to: Spatiotemporal analyses to uncover tactical structures
-
-Event data
+## Research projects: From counts to sequences
 
 - Early days: Performance indicators using game action counts
+     - Sampaio et al. https://www.tandfonline.com/doi/abs/10.1080/17461390600676200
 - Progressing to: Play-by-play data, network analysis, sequences / chains of actions
+     - Fewell et al., https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047445
+     - Taylor et al., Network analysis in AFL
 
-Video
+## Research projects: Video analysis
 
 - Early days: Manual notational analysis to derive new features
+     - https://www.taylorfrancis.com/chapters/edit/10.4324/9781315776743-6/overview-development-notation-analysis-mike-hughes
 - Progressing to: Computer vision
+     - Hall et al. https://link.springer.com/article/10.1007/s00521-020-05485-3
 
-## Analytics in applied sport
+## Research projects: Positioning data (GPS / LPS)
+
+- Early days: Understanding physical demands of training and competition
+     - Physical demands in soccer: https://researchportal.murdoch.edu.au/esploro/outputs/journalArticle/The-physical-demands-of-professional-soccer/991005544546907891
+- Progressing to: Spatiotemporal analyses to uncover tactical structures
+     - Seakins et al. https://www.mdpi.com/1424-8220/23/10/4891
+     - Raabe et al. https://doi.org/10.1080/02640414.2024.2414363
+
+## Examples from applied sport
 
 NFL game analysis / rules team (Prof Michael Lopez)
+https://www.youtube.com/watch?v=_zNGyyrG3_8
+https://knowledge.wharton.upenn.edu/podcast/moneyball/scaling-insights-how-big-data-and-simulation-are-transforming-the-nfl/
 
-QUT Centre for Data Science
+MLB: Baseball Savant - https://baseballsavant.mlb.com/
 
-North American professional sports (baseball, basketball, NFL, ice hockey)
+Cricket: Hawk-Eye
 
-Soccer / Football - recruiting
+## Challenges and opportunities {.smaller}
 
-Australian football
+Growth in sports analytics has been rapid but uneven
 
-## Challenges
+- Some sports / orgs have been faster to adapt / implement
+- Resourcing differences between sports and organisations within sports
 
-## Opportunities
+Sometimes growing in ways we're not quite ready for ("running before walking")
+
+- E.g., focus on hiring data scientists / analytics specialists without understanding and investing in infrastructure and support functions upstream (IT, data engineering, data governance)
+- Varying maturity in leaders' skills in using and interpreting data to inform their decisions
+
+Role clarity and integration within a performance team
+
+- Looking for the mix of domain, interpersonal, data and analytics, and computer science / programming skills
+- Is analytics a distinct role? Is it better to upskill an SME? Is it just sport science with larger data sets?
+
+Many rich sources of data across disciplines, although the industry generally lacks sufficient mathematical / statistical knowledge to analyse in sophisticated and robust ways -- opportunities for those with specialist skill sets to make an impact
+
+Research and analysis of women's sport preparation and performance
