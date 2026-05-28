@@ -1,3 +1,30 @@
 /*-- scss:defaults --*/
+$theme-darkblue: #0e172b;
+$theme-white: #ffffff;
+$theme-yellow: #ffc400;
+$theme-grey: #e5e5e5;
+$theme-cyan: #67e6f2;
+
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&display=swap');
+
+$body-bg: $theme-darkblue;
+$body-color: $theme-grey;
+$link-color: $theme-yellow;
+$presentation-heading-color: $theme-white;
+
+$font-family-sans-serif: 'Atkinson Hyperlegible Next', sans-serif;
+$presentation-heading-font: 'Stack Sans Notch', sans-serif;
+
+$presentation-font-size-root: 24px;
 
 /*-- scss:rules --*/
+.yellow {
+  color: $theme-yellow;
+  font-weight: bold;
+}
+
+.cyan {
+  color: $theme-cyan;
+  font-weight: bold;
+}

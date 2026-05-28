@@ -5,32 +5,137 @@ author: "1 June 2026 | ANZIAM Vic One-Day Workshop"
 format:
   revealjs:
     theme: [night, custom.scss]
-    incremental: TRUE
 filters:
   - timeline
 title-slide-attributes:
-  data-background-image: /images/jay-miller-DBurdz7Dm8Q-unsplash_edited.png
+  data-background-image: /images/jay-miller-DBurdz7Dm8Q-unsplash_edited_blue.png
   data-background-size: contain
-  data-background-opacity: "0.5"
+center-title-slide: false
 ---
 
-## Career timeline
+## A fish out of water
 
-::: {.timeline .tl-label-badge .fragment-slide}
-::: {.event data-label="2010" style="--tl-color-accent: #6366f1;"}
-**PhD in applied sport science**
+A multidisciplinary sport scientist
+
+. . .
+
+My usual audiences are...other people working in sport!
+
+. . .
+
+<br />
+<br />
+
+From the ANZIAM website:
+
+> Our role is to...Provide for the exchange of ideas and information between applied mathematicians and [users of mathematics in science, engineering and industry]{.yellow}
+
+. . .
+
+<br />
+<br />
+
+My goal is to shed light on [how mathematics and statistics is used in sport]{.cyan} today, and perhaps entice you to work in this space in future!
+
+## {}
+
+::: {.timeline .vertical-alt .tl-label-banner .fragment-slide}
+::: {.event data-label="2010" style="--tl-color-accent: #402D8B;"}
+**PhD in Applied Sports Physiology (Deakin University, AU)**
+<br />
+<br />
+Started learning about [mixed models]{.yellow} and [how to code in R]{.yellow}
 :::
-::: {.event .fragment data-label="2015" style="--tl-color-accent: #0891b2;"}
-**Geelong Cats Football Club (AFL)**
+::: {.event .fragment data-label="2015" style="--tl-color-accent: #3E7CA3;"}
+**Research Fellow (Geelong Cats FC & Deakin University, AU)**
+<br />
+<br />
+Analytical support across sport science, opposition analysis, recruiting
+<br />
+<br />
+Research projects using [network analysis]{.yellow} and [decision tree models]{.yellow}
 :::
-::: {.event .fragment data-label="2018" style="--tl-color-accent: #16a34a;"}
-**High Performance Sport New Zealand**
+::: {.event .fragment data-label="2018" style="--tl-color-accent: #2A7A57;"}
+**Senior Insights Researcher (initially) | Head of Intelligence (later)**<br />
+**(High Performance Sport New Zealand, NZ)**
+<br />
+<br />
+First foray into longitudinal qualitative research
+<br />
+<br />
+Developed [data engineering]{.yellow} knowledge, applied [text mining]{.yellow} techniques
 :::
-::: {.event .fragment data-label="2023" style="--tl-color-accent: #d97706;"}
-**Callaghan Innovation**
+::: {.event .fragment data-label="2023" style="--tl-color-accent: #B76B15;"}
+**Strategic Insights Analyst (Callaghan Innovation, NZ)**
+<br />
+<br />
+Individual contributor role, using [quant and qual methods]{.yellow}
+<br />
+<br />
+A new context, beyond sport
 :::
-::: {.event .fragment data-label="2026" style="--tl-color-accent: #dc2626;"}
-**La Trobe University**<br />
-asdf
+::: {.event .fragment data-label="2026" style="--tl-color-accent: #B61624;"}
+**Lecturer in Sports Analytics & Performance Analysis (La Trobe University, AU)**
+<br />
+<br />
+Sharing what I've learned through teaching
+<br />
+<br />
+Pursuing research to learn and apply [Bayesian modelling]{.yellow}, [network analysis]{.yellow}, and [clustering techniques]{.yellow}
 :::
 :::
+
+## Growing into "awkward adolescence"
+
+Technology changes:
+
+- Video
+- Wearable and portable technologies
+- Count statistics to detailed event data (play-by-play)
+- High-speed video
+- Multi-camera OTS
+
+Analytical practices:
+
+- Notational analysis
+- Programmatic approaches to working with data
+- Accessibility of statistical modelling outside of academia
+- Computer vision
+- Integrating data from multiple sources (across disciplines)
+
+Growth in private sports data and technology providers
+
+Competitor behaviours
+
+## Research projects
+
+GPS / LPS data
+
+- Early days: Understanding physical demands of training and competition
+- Progressing to: Spatiotemporal analyses to uncover tactical structures
+
+Event data
+
+- Early days: Performance indicators using game action counts
+- Progressing to: Play-by-play data, network analysis, sequences / chains of actions
+
+Video
+
+- Early days: Manual notational analysis to derive new features
+- Progressing to: Computer vision
+
+## Analytics in applied sport
+
+NFL game analysis / rules team (Prof Michael Lopez)
+
+QUT Centre for Data Science
+
+North American professional sports (baseball, basketball, NFL, ice hockey)
+
+Soccer / Football - recruiting
+
+Australian football
+
+## Challenges
+
+## Opportunities
