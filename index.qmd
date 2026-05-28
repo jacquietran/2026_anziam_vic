@@ -8,7 +8,7 @@ format:
 filters:
   - timeline
 title-slide-attributes:
-  data-background-image: /images/jay-miller-DBurdz7Dm8Q-unsplash_edited_blue.png
+  data-background-image: images/jay-miller-DBurdz7Dm8Q-unsplash_edited_blue.png
   data-background-size: contain
 center-title-slide: false
 ---
