@@ -1,0 +1,36 @@
+---
+title: "The awkward, exciting adolescence of sports analytics"
+subtitle: "Dr Jacquie Tran"
+author: "1 June 2026 | ANZIAM Vic One-Day Workshop"
+format:
+  revealjs:
+    theme: dark
+    incremental: TRUE
+filters:
+  - timeline
+title-slide-attributes:
+  data-background-image: /images/jay-miller-DBurdz7Dm8Q-unsplash.jpg
+  data-background-size: contain
+  data-background-opacity: "0.5"
+---
+
+## Career timeline
+
+::: {.timeline .tl-label-badge .fragment-slide}
+::: {.event data-label="2010" style="--tl-color-accent: #6366f1;"}
+**PhD in applied sport science**
+:::
+::: {.event .fragment data-label="2015" style="--tl-color-accent: #0891b2;"}
+**Geelong Cats Football Club (AFL)**
+:::
+::: {.event .fragment data-label="2018" style="--tl-color-accent: #16a34a;"}
+**High Performance Sport New Zealand**
+:::
+::: {.event .fragment data-label="2023" style="--tl-color-accent: #d97706;"}
+**Callaghan Innovation**
+:::
+::: {.event .fragment data-label="2026" style="--tl-color-accent: #dc2626;"}
+**La Trobe University**<br />
+asdf
+:::
+:::
