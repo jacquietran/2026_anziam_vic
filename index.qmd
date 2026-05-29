@@ -113,7 +113,7 @@ Competitor behaviours
 
 Snippet of AFL game statistics, via @afltables2010:
 
-```{r afl_count_stats, echo = FALSE, cache = TRUE}
+```{r afl_count_stats, echo = FALSE}
 
 afl_count_stats <- tibble::tribble(
   ~team, ~player, ~pct_of_game, ~kicks, ~marks, ~handballs, ~goals, ~behinds,
@@ -143,10 +143,17 @@ afl_count_stats |>
     goals       = "Goals",
     behinds     = "Behinds") |>
   gt::tab_style(
-     style = gt::cell_text(weight = "bold"),
-     locations = list(
-       gt::cells_column_labels(columns = dplyr::everything())
-     ))
+    style = gt::cell_text(weight = "bold"),
+    locations = list(
+      gt::cells_column_labels(columns = dplyr::everything()))) |>
+  gt::tab_style(
+    style = gt::cell_fill(color = "#d3f3f1", alpha = 0.7),
+    locations = gt::cells_body(
+      rows = stringr::str_detect(team, "Geelong"))) |>
+  gt::tab_style(
+    style = gt::cell_fill(color = "#e9b7ce", alpha = 0.7),
+    locations = gt::cells_body(
+      rows = stringr::str_detect(team, "Essendon")))
 
 ```
 
@@ -172,20 +179,271 @@ Snippet of AFL possession chain data:
 
 ```{r afl_chain_data, echo = FALSE}
 
+# Read data in
+chains_snippet <- readxl::read_excel(
+  path = "data/chains_snippet.xlsx",
+  col_names = TRUE) |>
+  janitor::clean_names()
 
+# Clean data for later plotting
+chains_snippet_tidy <- chains_snippet |>
+  dplyr::mutate(
+    counting_var = 1) |>
+  dplyr::group_by(chain) |>
+  dplyr::mutate(
+    possession_num = cumsum(counting_var)) |>
+  dplyr::ungroup() |>
+  # Identify chains with overlapping start / end possessions for plotting purposes
+  dplyr::mutate(
+    chain_A = dplyr::case_when(
+      chain == 7 | (chain == 8 & possession_num == 1) ~ TRUE,
+      TRUE                                            ~ FALSE),
+    chain_B = dplyr::case_when(
+      chain == 8 | (chain == 9 & possession_num == 1) ~ TRUE,
+      TRUE                                            ~ FALSE),
+    chain_C = dplyr::case_when(
+      chain == 9 ~ TRUE,
+      TRUE       ~ FALSE)) |>
+  dplyr::select(-counting_var) |>
+  dplyr::mutate(
+    team = factor(team)) |>
+  dplyr::mutate(
+    label_chain_a = dplyr::case_when(
+      chain_A == TRUE & chain == 7 ~ paste0(player, ", ", disposal),
+      chain_A == TRUE & chain == 8 ~ paste0(chain_start_type, " to ", team),
+      TRUE                         ~ NA_character_),
+    label_chain_b = dplyr::case_when(
+      chain_B == TRUE & chain == 8 ~ paste0(player, ", ", disposal),
+      chain_B == TRUE & chain == 9 ~ paste0(chain_start_type, " to ", team),
+      TRUE                         ~ NA_character_),
+    label_chain_c = dplyr::case_when(
+      chain_C == TRUE & chain == 9 & possession_num != 4 ~ paste0(player, ", ", disposal),
+      chain_C == TRUE & chain == 9 & possession_num == 4 ~ paste0(player, ", ", stringr::str_to_lower(chain_end_type)),
+      TRUE                         ~ NA_character_))
+
+# Display data in a table
+chains_snippet |>
+  dplyr::select(
+    -c("round", "match")) |>
+  gt::gt() |>
+  gt::tab_header(
+    title = gt::md("**Round 1, 2015 - Carlton vs. Richmond**")) |>
+  gt::tab_style(
+    style = gt::cell_text(weight = "bold"),
+    locations = list(
+      gt::cells_column_labels(columns = dplyr::everything()))) |>
+  gt::tab_style(
+    style = gt::cell_fill(color = "#fed766", alpha = 0.5),
+    locations = gt::cells_body(
+      rows = stringr::str_detect(team, "RICH"))) |>
+  gt::tab_style(
+    style = gt::cell_fill(color = "#69a2b0", alpha = 0.5),
+    locations = gt::cells_body(
+      rows = stringr::str_detect(team, "CARL")))
 
 ```
 
+## Visualising possession chains
+
+
+```{r plot_afl_oval, echo = FALSE, cache = TRUE, warning = FALSE, message = FALSE}
+
+# Using code from: https://github.com/alittlefitness/afl_visual_analysis/blob/master/AFL%20Analysis%20app.R
+
+# Section required to calculate the intersection of the 50m arc with the boundary of the oval
+size <- tibble::tibble(x = 160, y = 140)
+z <- (((size$x + size$y) / 4.01)^2 - 2500 + (size$x / 2)^2) / (2 * (size$x / 2))
+h <- ((size$x + size$y) / 4)
+a <- sqrt(h^2 - z^2)
+angle <- acos(a / 50)
+    
+# Oval plot
+oval <- ggplot2::ggplot(size) +
+  # outer boundary
+  ggforce::geom_ellipse(
+    ggplot2::aes(
+      x0 = 0, y0 = 0, a = x / 2, b = y / 2, angle = 0),
+    size = 1.2, fill = "darkgreen", alpha = 0.2) +
+  # centre square
+  ggplot2::geom_tile(
+    ggplot2::aes(
+      x = 0, y = 0, width = 50, height = 50),
+    fill = "#ffffff00", col = "black", size = 1.2) +
+  # right goalsquare
+  ggplot2::geom_tile(
+    ggplot2::aes(
+      (x = x / 2) - 4.5, y = 0, width = 9, height = 6.7),
+    fill = "#ffffff00", col = "black", size = 1.2) +
+  # left goalsquare
+  ggplot2::geom_tile(
+    ggplot2::aes(
+      (x = -x / 2) + 4.5, y = 0, width = 9, height = 6.7),
+    fill = "#ffffff00", col = "black", size = 1.2) +
+  # centre circle
+  ggforce::geom_circle(
+    ggplot2::aes(
+      x0 = 0, y0 = 0, r = 3),
+    size = 1.2) +
+  # right 50m arc
+  ggforce::geom_arc(
+    ggplot2::aes(
+      x0 = x / 2, y0 = 0, r = 50, start = -angle, end = -(3.142 - angle)),
+    size = 1.2) +
+  # left 50m arc
+  ggforce::geom_arc(
+    ggplot2::aes(
+      x0 = -x / 2, y0 = 0, r = 50, start = angle, end = 3.142 - angle),
+    size = 1.2)
+
+```
+
+``` {r plot_chain_A, echo = FALSE, fig.height = 8}
+
+# Chain A (chain 7-8)
+oval +
+  ggplot2::geom_point(
+    data = chains_snippet_tidy |>
+      dplyr::filter(chain_A == TRUE),
+    ggplot2::aes(
+      x = disp_x_start,
+      y = disp_y_start,
+      fill = team,
+      colour = team),
+    size = 9, shape = 21, stroke = 2) +
+  ggplot2::geom_segment(
+    data = chains_snippet_tidy |>
+      dplyr::filter(chain_A == TRUE & chain != 8),
+    ggplot2::aes(
+      x = disp_x_start,
+      y = disp_y_start,
+      xend = disp_x_end,
+      yend = disp_y_end),
+    linewidth = 1, lineend = "round", linejoin = "mitre",
+    arrow = ggplot2::arrow(length = grid::unit(0.015, "npc"))) +
+  ggrepel::geom_label_repel(
+    data = chains_snippet_tidy |>
+      dplyr::filter(chain_A == TRUE & team == "RICH"),
+    ggplot2::aes(
+      x = disp_x_start,
+      y = disp_y_start,
+      label = label_chain_a),
+    size = 6, seed = 359, segment.colour = NA, nudge_x = 20) +
+  ggrepel::geom_label_repel(
+    data = chains_snippet_tidy |>
+      dplyr::filter(chain_A == TRUE & team == "CARL"),
+    ggplot2::aes(
+      x = disp_x_start,
+      y = disp_y_start,
+      label = label_chain_a),
+    size = 6, seed = 359, segment.colour = NA, nudge_x = -22) +
+  ggplot2::scale_fill_manual(
+    values = c(
+      "RICH" = "#ffbf00",
+      "CARL" = "#FFFFFF")) +
+  ggplot2::scale_colour_manual(
+    values = c(
+      "RICH" = "#000000",
+      "CARL" = "#003049")) +
+  ggplot2::theme_void() +
+  ggplot2::theme(
+    legend.position = "top")
+
+```
+
+## Visualising possession chains
+
+```{r plot_chain_B, echo = FALSE, fig.height = 8}
+
+# Chain B (chains 8-9)
+oval +
+  ggplot2::geom_point(
+    data = chains_snippet_tidy |>
+      dplyr::filter(chain_B == TRUE),
+    ggplot2::aes(
+      x = disp_x_start,
+      y = disp_y_start,
+      fill = team,
+      colour = team),
+    size = 9, shape = 21, stroke = 2) +
+  ggplot2::geom_segment(
+    data = chains_snippet_tidy |>
+      dplyr::filter(chain_B == TRUE & chain != 9),
+    ggplot2::aes(
+      x = disp_x_start,
+      y = disp_y_start,
+      xend = disp_x_end,
+      yend = disp_y_end),
+    linewidth = 1, lineend = "round", linejoin = "mitre",
+    arrow = ggplot2::arrow(length = grid::unit(0.015, "npc"))) +
+  ggrepel::geom_label_repel(
+    data = chains_snippet_tidy |>
+      dplyr::filter(chain_B == TRUE),
+    ggplot2::aes(
+      x = disp_x_start,
+      y = disp_y_start,
+      label = label_chain_b),
+    seed = 359, segment.colour = NA,
+    position = ggpp::position_nudge_center(
+      x = -10, center_x = 0, direction = "split"),
+    direction = "y") +
+  ggplot2::scale_fill_manual(
+    values = c(
+      "RICH" = "#ffbf00",
+      "CARL" = "#FFFFFF")) +
+  ggplot2::scale_colour_manual(
+    values = c(
+      "RICH" = "#000000",
+      "CARL" = "#003049")) +
+  ggplot2::theme_void() +
+  ggplot2::theme(
+    legend.position = "top")
+
+```
+
+## Visualising possession chains
+
+```{r plot_chain_C, echo = FALSE, fig.height = 8}
+
+# Chain C (chain 9)
+oval +
+  ggplot2::geom_point(
+    data = chains_snippet_tidy |>
+      dplyr::filter(chain_C == TRUE),
+    ggplot2::aes(
+      x = disp_x_start,
+      y = disp_y_start,
+      fill = team,
+      colour = team),
+    size = 9, shape = 21, stroke = 2, show.legend = TRUE) +
+  ggplot2::geom_segment(
+    data = chains_snippet_tidy |>
+      dplyr::filter(chain_C == TRUE),
+    ggplot2::aes(
+      x = disp_x_start,
+      y = disp_y_start,
+      xend = disp_x_end,
+      yend = disp_y_end),
+    linewidth = 1, lineend = "round", linejoin = "mitre",
+    arrow = ggplot2::arrow(length = grid::unit(0.015, "npc"))) +
+  ggplot2::scale_fill_manual(
+    values = c(
+      "RICH" = "#ffbf00",
+      "CARL" = "#FFFFFF"),
+    drop = FALSE) +
+  ggplot2::scale_colour_manual(
+    values = c(
+      "RICH" = "#000000",
+      "CARL" = "#003049"),
+    drop = FALSE) +
+  ggplot2::theme_void() +
+  ggplot2::theme(
+    legend.position = "top")
+
+```
 
 ## From counts to sequences
 
   - Taylor et al., Network analysis in AFL
-
-## From counts to sequences
-
-- Progressing to: Play-by-play data, network analysis, sequences / chains of
-  actions
-  - Di Domenico (thesis), Chain features associated with goal scoring
 
 ## Basketball
 
