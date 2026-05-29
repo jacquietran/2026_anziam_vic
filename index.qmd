@@ -47,10 +47,10 @@ sport]{.cyan} today, and perhaps entice you to work in this space in future!
 
 ## 
 
-:::::::: {.timeline .vertical-alt .tl-label-banner .fragment-slide}
+:::::::: {.timeline .vertical .tl-label-banner .fragment-slide}
 ::: {.event data-label="2010 - Deakin University" style="--tl-color-accent: #402D8B;"}
 **PhD in Applied Sports Physiology** <br /> <br /> Started learning about [mixed
-models]{.yellow}<br />and [how to code in R]{.yellow}
+models]{.yellow} and [how to code in R]{.yellow}
 :::
 
 ::: {.event .fragment data-label="2015 - Geelong Cats FC & Deakin University" style="--tl-color-accent: #3E7CA3;"}
@@ -61,14 +61,14 @@ analysis]{.yellow} and [decision tree models]{.yellow}
 
 ::: {.event .fragment data-label="2018 - High Performance Sport NZ" style="--tl-color-accent: #2A7A57;"}
 **Senior Insights Researcher (initially)**<br /> **Head of Intelligence
-(later)** <br /> <br /> First foray into longitudinal<br/>qualitative research
+(later)** <br /> <br /> My first foray into longitudinal qualitative research
 <br /> <br /> Developed [data engineering]{.yellow} knowledge, applied [text
 mining]{.yellow} techniques
 :::
 
 ::: {.event .fragment data-label="2023 - Callaghan Innovation" style="--tl-color-accent: #B76B15;"}
 **Strategic Insights Analyst** <br /> <br /> Individual contributor role,
-using<br />[quant and qual methods]{.yellow} <br /> <br /> A new context, beyond
+using [quant and qual methods]{.yellow} for reporting and internal research / analysis projects<br /> <br /> A new context, beyond
 sport
 :::
 
@@ -100,69 +100,85 @@ Analytical practices:
 
 Dedicated tertiary courses for sports analytics
 
-Growth in private sports data and technology providers, advancements in volume and accessibility of data supplied by governing bodies and broadcast partners
+Growth in private sports data and technology providers, advancements in volume
+and accessibility of data supplied by governing bodies and broadcast partners
 
 Competitor behaviours
 
+## {background-color="#0e172b" background-image="images/Stoppage_in_an_AFL_game.jpg" background-opacity=0.7}
+
+[**From counts to sequences**]{.mimic-title .absolute left="51%" top="15%"}
+
+## Counts of game actions
+
+Snippet of AFL game statistics, via @afltables2010:
+
+```{r afl_count_stats, echo = FALSE, cache = TRUE}
+
+afl_count_stats <- tibble::tribble(
+  ~team, ~player, ~pct_of_game, ~kicks, ~marks, ~handballs, ~goals, ~behinds,
+  
+  "Geelong", "Gary Ablett", 0.92, 13, 5, 24, 2, 2,
+  "Geelong", "Jimmy Bartel", 0.91, 10, 6, 19, 2, 0,
+  "Geelong", "Tom Hawkins", 0.87, 8, 7, 6, 2, 1,
+  
+  "Essendon", "Alwyn Davey", 0.65, 6, 0, 4, 2, 1,
+  "Essendon", "Angus Monfries", 0.89, 10, 5, 6, 2, 1,
+  "Essendon", "David Zaharakis", 0.75, 10, 5, 9, 2, 2) |>
+  as.data.frame() |>
+  dplyr::select(
+    team, player, pct_of_game, kicks, handballs, dplyr::everything())
+
+afl_count_stats |>
+  gt::gt() |>
+  gt::tab_header(
+    title = gt::md("**Round 1, 2010 - Geelong vs. Essendon**")) |>
+  gt::cols_label(
+    team        = "Team",
+    player      = "Player name",
+    pct_of_game = "% of game played",
+    kicks       = "Kicks",
+    handballs   = "Handballs",
+    marks       = "Marks",
+    goals       = "Goals",
+    behinds     = "Behinds") |>
+  gt::tab_style(
+     style = gt::cell_text(weight = "bold"),
+     locations = list(
+       gt::cells_column_labels(columns = dplyr::everything())
+     ))
+
+```
+
+. . . 
+
+
+[Issues]{.yellow}
+
+No contextual information
+
+. . .
+
+Detail lost in summing up values
+
+. . .
+
+Difficult to evaluate quality of actions
+
+
+## Possession chains / play-by-play
+
+Snippet of AFL possession chain data:
+
+```{r afl_chain_data, echo = FALSE}
+
+
+
+```
+
+
 ## From counts to sequences
 
-[Early days:]{.cyan} Deriving performance indicators from counts of game actions
-
-@sampaio2006: https://www.tandfonline.com/doi/abs/10.1080/17461390600676200
-
-::: {.callout-note icon="false" title="Research question"}
-Can player statistics be used to discriminate between playing positions in basketball?
-:::
-
-::: {.callout-note icon="false" title="Data"}
-Box score statistics from three professional men's basketball leagues, 2000-2001 playoffs:
-
-- NBA (USA): 5 games
-- ACB (Spain): 3 games
-- LCB (Portugal): 4 games
-:::
-
-::: {.callout-note icon="false" title="Analysis"}
-Discriminant analysis - structure coefficients greater than |0.30| identified as being powerful contributors to each discriminant function.
-
-Cross-validation via leave-one-out method
-:::
-
-::: {.callout-note icon="false" title="Selected results"}
-NBA, as an example
-
-Discriminant analysis:
-
-- Function 1 (77% of variance between players, sig.): Assists (neg), off rebounds, 3 pointers missed (discriminating centres from forwards and guards)
-- Function 2 (23% of variance between players, sig.): Assists, def rebounds (neg), 2 pointers made, free throws made, free throws missed (discriminating guards from forwards)
-
-Cross-validation:
-
-- 98% of guards correctly predicted (n = 43)
-- 75% of forwards correctly predicted (n = 28); 25% incorrectly predicted as guards
-- 71% of centres correctly predicted (n = 17); 29% incorrectly predicted as forwards
-:::
-
-::: {.callout-note icon="false" title="Observations"}
-Small data set
-
-Some insight into overlapping roles and skills across positional groups
-
-Largely confirms patterns observable from simple summaries of raw count data and visual observation --  centres notably contribute via greater rebounding and fewer assists (as compared to forwards and guards), guards notably contribute via greater assists, scoring, and scoring attempts (as compared to forwards).
-:::
-
-## From counts to sequences
-
-[Progressing to:]{.yellow} Play-by-play data, network analysis, sequences / chains of
-actions
-
-@fewell2012:
-https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047445
-
-## From counts to sequences
-
-- Progressing to: Play-by-play data, network analysis, sequences / chains of
-  actions
   - Taylor et al., Network analysis in AFL
 
 ## From counts to sequences
@@ -170,6 +186,11 @@ https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047445
 - Progressing to: Play-by-play data, network analysis, sequences / chains of
   actions
   - Di Domenico (thesis), Chain features associated with goal scoring
+
+## Basketball
+
+@fewell2012:
+https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047445
 
 ## From manual to automated video annotation
 
@@ -238,5 +259,7 @@ Many rich sources of data across disciplines, although the industry generally
 lacks sufficient mathematical / statistical knowledge to analyse in
 sophisticated and robust ways ("we don't know what we don't know") --
 opportunities for those with specialist skill sets to make an impact
+
+Volume of available data has grown rapidly, but have we lost some of our discernment in the process?
 
 ## References

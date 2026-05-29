@@ -16,7 +16,7 @@ $presentation-heading-color: $theme-white;
 $font-family-sans-serif: 'Atkinson Hyperlegible Next', sans-serif;
 $presentation-heading-font: 'Stack Sans Notch', sans-serif;
 
-$presentation-font-size-root: 24px;
+$presentation-font-size-root: 28px;
 
 /*-- scss:rules --*/
 .yellow {
@@ -27,4 +27,11 @@ $presentation-font-size-root: 24px;
 .cyan {
   color: $theme-cyan;
   font-weight: bold;
+}
+
+.mimic-title {
+  background-color: $theme-darkblue;
+  color: $theme-white;
+  font-family: $presentation-heading-font;
+  font-size: 40px;
 }

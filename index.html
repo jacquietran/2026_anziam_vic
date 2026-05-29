@@ -53,7 +53,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-8093f5f8e0ee5d65a9bef9dab0a76d47.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-8b22718c85cd6699503a14b9cc90ec23.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -183,18 +183,18 @@
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
-<div class="timeline vertical-alt tl-label-banner fragment-slide">
+<div class="timeline vertical tl-label-banner fragment-slide">
 <div class="event" data-label="2010 - Deakin University" style="--tl-color-accent: #402D8B;">
-<p><strong>PhD in Applied Sports Physiology</strong> <br> <br> Started learning about <span class="yellow">mixed models</span><br>and <span class="yellow">how to code in R</span></p>
+<p><strong>PhD in Applied Sports Physiology</strong> <br> <br> Started learning about <span class="yellow">mixed models</span> and <span class="yellow">how to code in R</span></p>
 </div>
 <div class="event fragment" data-label="2015 - Geelong Cats FC &amp; Deakin University" style="--tl-color-accent: #3E7CA3;">
 <p><strong>Research Fellow</strong> <br> <br> Analytical support across sport science, opposition analysis, recruiting <br> <br> Research projects using <span class="yellow">network analysis</span> and <span class="yellow">decision tree models</span></p>
 </div>
 <div class="event fragment" data-label="2018 - High Performance Sport NZ" style="--tl-color-accent: #2A7A57;">
-<p><strong>Senior Insights Researcher (initially)</strong><br> <strong>Head of Intelligence (later)</strong> <br> <br> First foray into longitudinal<br>qualitative research <br> <br> Developed <span class="yellow">data engineering</span> knowledge, applied <span class="yellow">text mining</span> techniques</p>
+<p><strong>Senior Insights Researcher (initially)</strong><br> <strong>Head of Intelligence (later)</strong> <br> <br> My first foray into longitudinal qualitative research <br> <br> Developed <span class="yellow">data engineering</span> knowledge, applied <span class="yellow">text mining</span> techniques</p>
 </div>
 <div class="event fragment" data-label="2023 - Callaghan Innovation" style="--tl-color-accent: #B76B15;">
-<p><strong>Strategic Insights Analyst</strong> <br> <br> Individual contributor role, using<br><span class="yellow">quant and qual methods</span> <br> <br> A new context, beyond sport</p>
+<p><strong>Strategic Insights Analyst</strong> <br> <br> Individual contributor role, using <span class="yellow">quant and qual methods</span> for reporting and internal research / analysis projects<br> <br> A new context, beyond sport</p>
 </div>
 <div class="event fragment" data-label="2026 - La Trobe University" style="--tl-color-accent: #B61624;">
 <p><strong>Lecturer in Sports Analytics &amp; Performance Analysis</strong> <br> <br> Sharing what I’ve learned through teaching <br> <br> Pursuing research to learn and apply <span class="yellow">Bayesian modelling</span>, <span class="yellow">network analysis</span>, and <span class="yellow">clustering techniques</span></p>
@@ -223,96 +223,565 @@
 <p>Growth in private sports data and technology providers, advancements in volume and accessibility of data supplied by governing bodies and broadcast partners</p>
 <p>Competitor behaviours</p>
 </section>
-<section id="from-counts-to-sequences" class="slide level2">
-<h2>From counts to sequences</h2>
-<p><span class="cyan">Early days:</span> Deriving performance indicators from counts of game actions</p>
-<p><span class="citation" data-cites="sampaio2006">Sampaio et al. (<a href="#/references" role="doc-biblioref" onclick="">2006</a>)</span>: https://www.tandfonline.com/doi/abs/10.1080/17461390600676200</p>
-<div title="Research question">
-<div class="callout callout-note no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Research question</strong></p>
+<section id="section-1" class="slide level2" data-background-color="#0e172b" data-background-image="images/Stoppage_in_an_AFL_game.jpg" data-background-opacity="0.7">
+<h2></h2>
+<p><span class="mimic-title absolute" style="top: 15%; left: 51%; "><strong>From counts to sequences</strong></span></p>
+</section>
+<section id="counts-of-game-actions" class="slide level2">
+<h2>Counts of game actions</h2>
+<p>Snippet of AFL game statistics, via <span class="citation" data-cites="afltables2010">AFL Tables (<a href="#/references" role="doc-biblioref" onclick="">2010</a>)</span>:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="hsamsdctws" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hsamsdctws table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#hsamsdctws thead, #hsamsdctws tbody, #hsamsdctws tfoot, #hsamsdctws tr, #hsamsdctws td, #hsamsdctws th {
+  border-style: none;
+}
+
+#hsamsdctws p {
+  margin: 0;
+  padding: 0;
+}
+
+#hsamsdctws .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#hsamsdctws .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#hsamsdctws .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#hsamsdctws .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#hsamsdctws .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hsamsdctws .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hsamsdctws .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hsamsdctws .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#hsamsdctws .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#hsamsdctws .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#hsamsdctws .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#hsamsdctws .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#hsamsdctws .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#hsamsdctws .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#hsamsdctws .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#hsamsdctws .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#hsamsdctws .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#hsamsdctws .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#hsamsdctws .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hsamsdctws .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#hsamsdctws .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#hsamsdctws .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#hsamsdctws .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hsamsdctws .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#hsamsdctws .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#hsamsdctws .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hsamsdctws .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hsamsdctws .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#hsamsdctws .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hsamsdctws .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#hsamsdctws .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hsamsdctws .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hsamsdctws .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hsamsdctws .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hsamsdctws .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hsamsdctws .gt_left {
+  text-align: left;
+}
+
+#hsamsdctws .gt_center {
+  text-align: center;
+}
+
+#hsamsdctws .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#hsamsdctws .gt_font_normal {
+  font-weight: normal;
+}
+
+#hsamsdctws .gt_font_bold {
+  font-weight: bold;
+}
+
+#hsamsdctws .gt_font_italic {
+  font-style: italic;
+}
+
+#hsamsdctws .gt_super {
+  font-size: 65%;
+}
+
+#hsamsdctws .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#hsamsdctws .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#hsamsdctws .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#hsamsdctws .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#hsamsdctws .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#hsamsdctws .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#hsamsdctws .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#hsamsdctws .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#hsamsdctws div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<td colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border"><strong>Round 1, 2010 - Geelong vs.&nbsp;Essendon</strong></td>
+</tr>
+<tr class="gt_col_headings even">
+<th id="team" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Team</th>
+<th id="player" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Player name</th>
+<th id="pct_of_game" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">% of game played</th>
+<th id="kicks" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Kicks</th>
+<th id="handballs" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Handballs</th>
+<th id="marks" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Marks</th>
+<th id="goals" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Goals</th>
+<th id="behinds" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="font-weight: bold" scope="col">Behinds</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="team">Geelong</td>
+<td class="gt_row gt_left" headers="player">Gary Ablett</td>
+<td class="gt_row gt_right" headers="pct_of_game">0.92</td>
+<td class="gt_row gt_right" headers="kicks">13</td>
+<td class="gt_row gt_right" headers="handballs">24</td>
+<td class="gt_row gt_right" headers="marks">5</td>
+<td class="gt_row gt_right" headers="goals">2</td>
+<td class="gt_row gt_right" headers="behinds">2</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="team">Geelong</td>
+<td class="gt_row gt_left" headers="player">Jimmy Bartel</td>
+<td class="gt_row gt_right" headers="pct_of_game">0.91</td>
+<td class="gt_row gt_right" headers="kicks">10</td>
+<td class="gt_row gt_right" headers="handballs">19</td>
+<td class="gt_row gt_right" headers="marks">6</td>
+<td class="gt_row gt_right" headers="goals">2</td>
+<td class="gt_row gt_right" headers="behinds">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="team">Geelong</td>
+<td class="gt_row gt_left" headers="player">Tom Hawkins</td>
+<td class="gt_row gt_right" headers="pct_of_game">0.87</td>
+<td class="gt_row gt_right" headers="kicks">8</td>
+<td class="gt_row gt_right" headers="handballs">6</td>
+<td class="gt_row gt_right" headers="marks">7</td>
+<td class="gt_row gt_right" headers="goals">2</td>
+<td class="gt_row gt_right" headers="behinds">1</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="team">Essendon</td>
+<td class="gt_row gt_left" headers="player">Alwyn Davey</td>
+<td class="gt_row gt_right" headers="pct_of_game">0.65</td>
+<td class="gt_row gt_right" headers="kicks">6</td>
+<td class="gt_row gt_right" headers="handballs">4</td>
+<td class="gt_row gt_right" headers="marks">0</td>
+<td class="gt_row gt_right" headers="goals">2</td>
+<td class="gt_row gt_right" headers="behinds">1</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="team">Essendon</td>
+<td class="gt_row gt_left" headers="player">Angus Monfries</td>
+<td class="gt_row gt_right" headers="pct_of_game">0.89</td>
+<td class="gt_row gt_right" headers="kicks">10</td>
+<td class="gt_row gt_right" headers="handballs">6</td>
+<td class="gt_row gt_right" headers="marks">5</td>
+<td class="gt_row gt_right" headers="goals">2</td>
+<td class="gt_row gt_right" headers="behinds">1</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="team">Essendon</td>
+<td class="gt_row gt_left" headers="player">David Zaharakis</td>
+<td class="gt_row gt_right" headers="pct_of_game">0.75</td>
+<td class="gt_row gt_right" headers="kicks">10</td>
+<td class="gt_row gt_right" headers="handballs">9</td>
+<td class="gt_row gt_right" headers="marks">5</td>
+<td class="gt_row gt_right" headers="goals">2</td>
+<td class="gt_row gt_right" headers="behinds">2</td>
+</tr>
+</tbody>
+</table>
+
 </div>
-<div class="callout-content">
-<p>Can player statistics be used to discriminate between playing positions in basketball?</p>
 </div>
 </div>
+<div class="fragment">
+<p><span class="yellow">Issues</span></p>
+<p>No contextual information</p>
 </div>
+<div class="fragment">
+<p>Detail lost in summing up values</p>
 </div>
-<div title="Data">
-<div class="callout callout-note no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Data</strong></p>
-</div>
-<div class="callout-content">
-<p>Box score statistics from three professional men’s basketball leagues, 2000-2001 playoffs:</p>
-<ul>
-<li>NBA (USA): 5 games</li>
-<li>ACB (Spain): 3 games</li>
-<li>LCB (Portugal): 4 games</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div title="Analysis">
-<div class="callout callout-note no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Analysis</strong></p>
-</div>
-<div class="callout-content">
-<p>Discriminant analysis - structure coefficients greater than |0.30| identified as being powerful contributors to each discriminant function.</p>
-<p>Cross-validation via leave-one-out method</p>
-</div>
-</div>
-</div>
-</div>
-<div title="Selected results">
-<div class="callout callout-note no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Selected results</strong></p>
-</div>
-<div class="callout-content">
-<p>NBA, as an example</p>
-<p>Discriminant analysis:</p>
-<ul>
-<li>Function 1 (77% of variance between players, sig.): Assists (neg), off rebounds, 3 pointers missed (discriminating centres from forwards and guards)</li>
-<li>Function 2 (23% of variance between players, sig.): Assists, def rebounds (neg), 2 pointers made, free throws made, free throws missed (discriminating guards from forwards)</li>
-</ul>
-<p>Cross-validation:</p>
-<ul>
-<li>98% of guards correctly predicted (n = 43)</li>
-<li>75% of forwards correctly predicted (n = 28); 25% incorrectly predicted as guards</li>
-<li>71% of centres correctly predicted (n = 17); 29% incorrectly predicted as forwards</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div title="Observations">
-<div class="callout callout-note no-icon callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong>Observations</strong></p>
-</div>
-<div class="callout-content">
-<p>Small data set</p>
-<p>Some insight into overlapping roles and skills across positional groups</p>
-<p>Largely confirms patterns observable from simple summaries of raw count data and visual observation – centres notably contribute via greater rebounding and fewer assists (as compared to forwards and guards), guards notably contribute via greater assists, scoring, and scoring attempts (as compared to forwards).</p>
-</div>
-</div>
-</div>
+<div class="fragment">
+<p>Difficult to evaluate quality of actions</p>
 </div>
 </section>
-<section id="from-counts-to-sequences-1" class="slide level2">
+<section id="from-counts-to-sequences" class="slide level2">
 <h2>From counts to sequences</h2>
 <p><span class="yellow">Progressing to:</span> Play-by-play data, network analysis, sequences / chains of actions</p>
 <p><span class="citation" data-cites="fewell2012">Fewell et al. (<a href="#/references" role="doc-biblioref" onclick="">2012</a>)</span>: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047445</p>
 </section>
-<section id="from-counts-to-sequences-2" class="slide level2">
+<section id="from-counts-to-sequences-1" class="slide level2">
 <h2>From counts to sequences</h2>
 <ul>
 <li>Progressing to: Play-by-play data, network analysis, sequences / chains of actions
@@ -321,7 +790,7 @@
 </ul></li>
 </ul>
 </section>
-<section id="from-counts-to-sequences-3" class="slide level2">
+<section id="from-counts-to-sequences-2" class="slide level2">
 <h2>From counts to sequences</h2>
 <ul>
 <li>Progressing to: Play-by-play data, network analysis, sequences / chains of actions
@@ -403,16 +872,17 @@
 </ul>
 <p><span class="yellow">Opportunities?</span></p>
 <p>Many rich sources of data across disciplines, although the industry generally lacks sufficient mathematical / statistical knowledge to analyse in sophisticated and robust ways (“we don’t know what we don’t know”) – opportunities for those with specialist skill sets to make an impact</p>
+<p>Volume of available data has grown rapidly, but have we lost some of our discernment in the process?</p>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-afltables2010" class="csl-entry" role="listitem">
+AFL Tables. 2010. <em>AFL Tables - Geelong v Essendon - Fri, 26-Mar-2010 7:40 PM (6:40 PM) - Match Stats</em>. <a href="https://afltables.com/afl/stats/games/2010/050920100326.html">https://afltables.com/afl/stats/games/2010/050920100326.html</a>.
+</div>
 <div id="ref-fewell2012" class="csl-entry" role="listitem">
 Fewell, Jennifer H., Dieter Armbruster, John Ingraham, Alexander Petersen, and James S. Waters. 2012. <span>“Basketball Teams as Strategic Networks.”</span> <em>PLoS ONE</em> 7 (11): e47445. <a href="https://doi.org/10.1371/journal.pone.0047445">https://doi.org/10.1371/journal.pone.0047445</a>.
-</div>
-<div id="ref-sampaio2006" class="csl-entry" role="listitem">
-Sampaio, Jaime, Manuel Janeira, Sergio Ibáñez, and Alberto Lorenzo. 2006. <span>“Discriminant Analysis of Game<span>-</span>Related Statistics Between Basketball Guards, Forwards and Centres in Three Professional Leagues.”</span> <em>European Journal of Sport Science</em> 6 (3): 173–78. <a href="https://doi.org/10.1080/17461390600676200">https://doi.org/10.1080/17461390600676200</a>.
 </div>
 </div>
 </section>
@@ -631,6 +1101,82 @@ Sampaio, Jaime, Manuel Janeira, Sergio Ibáñez, and Alberto Lorenzo. 2006. <spa
         ]
       });
     </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
