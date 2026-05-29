@@ -6,12 +6,17 @@ format:
   revealjs:
     theme: [night, custom.scss]
     slide-number: true
-filters:
-  - timeline
+    center-title-slide: false
 title-slide-attributes:
   data-background-image: images/jay-miller-DBurdz7Dm8Q-unsplash_edited_blue.png
   data-background-size: contain
-center-title-slide: false
+filters:
+  - timeline
+  - custom-callout
+editor: 
+  markdown: 
+    wrap: 80
+bibliography: references.bib
 ---
 
 ## A fish out of water
@@ -20,71 +25,60 @@ A multidisciplinary sport scientist
 
 . . .
 
-My usual audiences are...other people studying sport science and working in sport!
+My usual audiences are...other people studying sport science and working in
+sport!
 
 . . .
 
-<br />
-<br />
+<br /> <br />
 
 From the ANZIAM website:
 
-> Our role is to...Provide for the exchange of ideas and information between applied mathematicians and [users of mathematics in science, engineering and industry]{.yellow}
+> Our role is to...Provide for the exchange of ideas and information between
+> applied mathematicians and [users of mathematics in science, engineering and
+> industry]{.yellow}
 
 . . .
 
-<br />
-<br />
+<br /> <br />
 
-My goal is to shed light on [how mathematics and statistics is used in sport]{.cyan} today, and perhaps entice you to work in this space in future!
+My goal is to shed light on [how mathematics and statistics is used in
+sport]{.cyan} today, and perhaps entice you to work in this space in future!
 
-## {}
+## 
 
-::: {.timeline .vertical-alt .tl-label-banner .fragment-slide}
-::: {.event data-label="2010" style="--tl-color-accent: #402D8B;"}
-**PhD in Applied Sports Physiology (Deakin University, AU)**
-<br />
-<br />
-Started learning about [mixed models]{.yellow} and [how to code in R]{.yellow}
+:::::::: {.timeline .vertical-alt .tl-label-banner .fragment-slide}
+::: {.event data-label="2010 - Deakin University" style="--tl-color-accent: #402D8B;"}
+**PhD in Applied Sports Physiology** <br /> <br /> Started learning about [mixed
+models]{.yellow}<br />and [how to code in R]{.yellow}
 :::
-::: {.event .fragment data-label="2015" style="--tl-color-accent: #3E7CA3;"}
-**Research Fellow (Geelong Cats FC & Deakin University, AU)**
-<br />
-<br />
-Analytical support across sport science, opposition analysis, recruiting
-<br />
-<br />
-Research projects using [network analysis]{.yellow} and [decision tree models]{.yellow}
+
+::: {.event .fragment data-label="2015 - Geelong Cats FC & Deakin University" style="--tl-color-accent: #3E7CA3;"}
+**Research Fellow** <br /> <br /> Analytical support across sport science,
+opposition analysis, recruiting <br /> <br /> Research projects using [network
+analysis]{.yellow} and [decision tree models]{.yellow}
 :::
-::: {.event .fragment data-label="2018" style="--tl-color-accent: #2A7A57;"}
-**Senior Insights Researcher (initially) | Head of Intelligence (later)**<br />
-**(High Performance Sport New Zealand, NZ)**
-<br />
-<br />
-First foray into longitudinal qualitative research
-<br />
-<br />
-Developed [data engineering]{.yellow} knowledge, applied [text mining]{.yellow} techniques
+
+::: {.event .fragment data-label="2018 - High Performance Sport NZ" style="--tl-color-accent: #2A7A57;"}
+**Senior Insights Researcher (initially)**<br /> **Head of Intelligence
+(later)** <br /> <br /> First foray into longitudinal<br/>qualitative research
+<br /> <br /> Developed [data engineering]{.yellow} knowledge, applied [text
+mining]{.yellow} techniques
 :::
-::: {.event .fragment data-label="2023" style="--tl-color-accent: #B76B15;"}
-**Strategic Insights Analyst (Callaghan Innovation, NZ)**
-<br />
-<br />
-Individual contributor role, using [quant and qual methods]{.yellow}
-<br />
-<br />
-A new context, beyond sport
+
+::: {.event .fragment data-label="2023 - Callaghan Innovation" style="--tl-color-accent: #B76B15;"}
+**Strategic Insights Analyst** <br /> <br /> Individual contributor role,
+using<br />[quant and qual methods]{.yellow} <br /> <br /> A new context, beyond
+sport
 :::
-::: {.event .fragment data-label="2026" style="--tl-color-accent: #B61624;"}
-**Lecturer in Sports Analytics & Performance Analysis (La Trobe University, AU)**
-<br />
-<br />
-Sharing what I've learned through teaching
-<br />
-<br />
-Pursuing research to learn and apply [Bayesian modelling]{.yellow}, [network analysis]{.yellow}, and [clustering techniques]{.yellow}
+
+::: {.event .fragment data-label="2026 - La Trobe University" style="--tl-color-accent: #B61624;"}
+**Lecturer in Sports Analytics & Performance Analysis** <br /> <br /> Sharing
+what I've learned through teaching <br /> <br /> Pursuing research to learn and
+apply [Bayesian modelling]{.yellow}, [network analysis]{.yellow}, and
+[clustering techniques]{.yellow}
 :::
-:::
+::::::::
 
 ## Rapid growth into "awkward adolescence" {.smaller}
 
@@ -106,51 +100,104 @@ Analytical practices:
 
 Dedicated tertiary courses for sports analytics
 
-Growth in private sports data and technology providers
+Growth in private sports data and technology providers, advancements in volume and accessibility of data supplied by governing bodies and broadcast partners
 
 Competitor behaviours
 
 ## From counts to sequences
 
-- Early days: Performance indicators using game action counts
-     - Sampaio et al. https://www.tandfonline.com/doi/abs/10.1080/17461390600676200
-     
+[Early days:]{.cyan} Deriving performance indicators from counts of game actions
+
+@sampaio2006: https://www.tandfonline.com/doi/abs/10.1080/17461390600676200
+
+::: {.callout-note icon="false" title="Research question"}
+Can player statistics be used to discriminate between playing positions in basketball?
+:::
+
+::: {.callout-note icon="false" title="Data"}
+Box score statistics from three professional men's basketball leagues, 2000-2001 playoffs:
+
+- NBA (USA): 5 games
+- ACB (Spain): 3 games
+- LCB (Portugal): 4 games
+:::
+
+::: {.callout-note icon="false" title="Analysis"}
+Discriminant analysis - structure coefficients greater than |0.30| identified as being powerful contributors to each discriminant function.
+
+Cross-validation via leave-one-out method
+:::
+
+::: {.callout-note icon="false" title="Selected results"}
+NBA, as an example
+
+Discriminant analysis:
+
+- Function 1 (77% of variance between players, sig.): Assists (neg), off rebounds, 3 pointers missed (discriminating centres from forwards and guards)
+- Function 2 (23% of variance between players, sig.): Assists, def rebounds (neg), 2 pointers made, free throws made, free throws missed (discriminating guards from forwards)
+
+Cross-validation:
+
+- 98% of guards correctly predicted (n = 43)
+- 75% of forwards correctly predicted (n = 28); 25% incorrectly predicted as guards
+- 71% of centres correctly predicted (n = 17); 29% incorrectly predicted as forwards
+:::
+
+::: {.callout-note icon="false" title="Observations"}
+Small data set
+
+Some insight into overlapping roles and skills across positional groups
+
+Largely confirms patterns observable from simple summaries of raw count data and visual observation --  centres notably contribute via greater rebounding and fewer assists (as compared to forwards and guards), guards notably contribute via greater assists, scoring, and scoring attempts (as compared to forwards).
+:::
+
 ## From counts to sequences
 
-- Progressing to: Play-by-play data, network analysis, sequences / chains of actions
-     - Fewell et al., https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047445
+[Progressing to:]{.yellow} Play-by-play data, network analysis, sequences / chains of
+actions
+
+@fewell2012:
+https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047445
 
 ## From counts to sequences
 
-- Progressing to: Play-by-play data, network analysis, sequences / chains of actions
-     - Taylor et al., Network analysis in AFL
+- Progressing to: Play-by-play data, network analysis, sequences / chains of
+  actions
+  - Taylor et al., Network analysis in AFL
+
+## From counts to sequences
+
+- Progressing to: Play-by-play data, network analysis, sequences / chains of
+  actions
+  - Di Domenico (thesis), Chain features associated with goal scoring
 
 ## From manual to automated video annotation
 
 - Early days: Manual notational analysis to derive new features
-     - https://www.taylorfrancis.com/chapters/edit/10.4324/9781315776743-6/overview-development-notation-analysis-mike-hughes
+  - https://www.taylorfrancis.com/chapters/edit/10.4324/9781315776743-6/overview-development-notation-analysis-mike-hughes
 
 ## From manual to automated video annotation
 
 - Progressing to: Computer vision
-     - Hall et al. https://link.springer.com/article/10.1007/s00521-020-05485-3
+  - Hall et al. https://link.springer.com/article/10.1007/s00521-020-05485-3
 
 ## From movement summaries to spatiotemporal analysis
 
 - Early days: Understanding physical demands of training and competition
-     - Physical demands in soccer: https://researchportal.murdoch.edu.au/esploro/outputs/journalArticle/The-physical-demands-of-professional-soccer/991005544546907891
-     
+  - Physical demands in soccer:
+    https://researchportal.murdoch.edu.au/esploro/outputs/journalArticle/The-physical-demands-of-professional-soccer/991005544546907891
+
 ## From movement summaries to spatiotemporal analysis
-     
+
 - Progressing to: Spatiotemporal analyses to uncover tactical structures
-     - Seakins et al. https://www.mdpi.com/1424-8220/23/10/4891
-     - Raabe et al. https://doi.org/10.1080/02640414.2024.2414363
+  - Seakins et al. https://www.mdpi.com/1424-8220/23/10/4891
+  - Raabe et al. https://doi.org/10.1080/02640414.2024.2414363
 
 ## Applied examples: NFL
 
 NFL game analysis / rules team (Prof Michael Lopez)
 
-- https://www.youtube.com/watch?v=_zNGyyrG3_8
+- https://www.youtube.com/watch?v=\_zNGyyrG3_8
 - https://knowledge.wharton.upenn.edu/podcast/moneyball/scaling-insights-how-big-data-and-simulation-are-transforming-the-nfl/
 
 ## Applied examples: MLB
@@ -172,14 +219,24 @@ Growth in sports analytics has been rapid but uneven
 
 Sometimes growing in ways we're not quite ready for ("running before walking")
 
-- E.g., focus on hiring data scientists / analytics specialists without understanding and investing in infrastructure and support functions upstream (IT, data engineering, data governance)
-- Varying maturity in leaders' skills in using and interpreting data to inform their decisions
+- E.g., focus on hiring data scientists / analytics specialists without
+  understanding and investing in infrastructure and support functions upstream
+  (IT, data engineering, data governance)
+- Varying maturity in leaders' skills in using and interpreting data to inform
+  their decisions
 
 Role clarity and integration within a performance team
 
-- Looking for the mix of domain, interpersonal, data and analytics, and computer science / programming skills
-- Is analytics a distinct role? Is it better to upskill an SME? Is it just sport science with larger data sets?
+- Looking for the mix of domain, interpersonal, data and analytics, and computer
+  science / programming skills
+- Is analytics a distinct role? Is it better to upskill an SME? Is it just sport
+  science with larger data sets?
 
 [Opportunities?]{.yellow}
 
-Many rich sources of data across disciplines, although the industry generally lacks sufficient mathematical / statistical knowledge to analyse in sophisticated and robust ways ("we don't know what we don't know") -- opportunities for those with specialist skill sets to make an impact
+Many rich sources of data across disciplines, although the industry generally
+lacks sufficient mathematical / statistical knowledge to analyse in
+sophisticated and robust ways ("we don't know what we don't know") --
+opportunities for those with specialist skill sets to make an impact
+
+## References
