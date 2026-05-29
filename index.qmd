@@ -67,9 +67,9 @@ mining]{.yellow} techniques
 :::
 
 ::: {.event .fragment data-label="2023 - Callaghan Innovation" style="--tl-color-accent: #B76B15;"}
-**Strategic Insights Analyst** <br /> <br /> Individual contributor role,
-using [quant and qual methods]{.yellow} for reporting and internal research / analysis projects<br /> <br /> A new context, beyond
-sport
+**Strategic Insights Analyst** <br /> <br /> Individual contributor role, using
+[quant and qual methods]{.yellow} for reporting and internal research / analysis
+projects<br /> <br /> A new context, beyond sport
 :::
 
 ::: {.event .fragment data-label="2026 - La Trobe University" style="--tl-color-accent: #B61624;"}
@@ -105,7 +105,7 @@ and accessibility of data supplied by governing bodies and broadcast partners
 
 Competitor behaviours
 
-## {background-color="#0e172b" background-image="images/Stoppage_in_an_AFL_game.jpg" background-opacity=0.7}
+##  {background-color="#0e172b" background-image="images/Stoppage_in_an_AFL_game.jpg" background-opacity="0.7"}
 
 [**From counts to sequences**]{.mimic-title .absolute left="51%" top="15%"}
 
@@ -157,8 +157,7 @@ afl_count_stats |>
 
 ```
 
-. . . 
-
+. . .
 
 [Issues]{.yellow}
 
@@ -172,12 +171,11 @@ Detail lost in summing up values
 
 Difficult to evaluate quality of actions
 
-
 ## Possession chains / play-by-play
 
 Snippet of AFL possession chain data:
 
-```{r afl_chain_data, echo = FALSE}
+```{r afl_chain_data, echo = FALSE, cache = TRUE}
 
 # Read data in
 chains_snippet <- readxl::read_excel(
@@ -243,8 +241,21 @@ chains_snippet |>
 
 ```
 
-## Visualising possession chains
+. . .
 
+[Enhancements:]{.cyan}
+
+More info about when and where actions took place
+
+. . .
+
+Connections between actions and outcomes
+
+. . .
+
+Enables analysis of actions in sequence
+
+## Visualising possession chains
 
 ```{r plot_afl_oval, echo = FALSE, cache = TRUE, warning = FALSE, message = FALSE}
 
@@ -297,7 +308,7 @@ oval <- ggplot2::ggplot(size) +
 
 ```
 
-``` {r plot_chain_A, echo = FALSE, fig.height = 8}
+```{r plot_chain_A, echo = FALSE, cache = TRUE, fig.height = 8}
 
 # Chain A (chain 7-8)
 oval +
@@ -346,13 +357,15 @@ oval +
       "CARL" = "#003049")) +
   ggplot2::theme_void() +
   ggplot2::theme(
-    legend.position = "top")
+    legend.position = "top",
+    legend.title = ggplot2::element_blank(),
+    legend.text = ggplot2::element_text(size = ggplot2::rel(2)))
 
 ```
 
 ## Visualising possession chains
 
-```{r plot_chain_B, echo = FALSE, fig.height = 8}
+```{r plot_chain_B, echo = FALSE, cache = TRUE, fig.height = 8}
 
 # Chain B (chains 8-9)
 oval +
@@ -382,10 +395,7 @@ oval +
       x = disp_x_start,
       y = disp_y_start,
       label = label_chain_b),
-    seed = 359, segment.colour = NA,
-    position = ggpp::position_nudge_center(
-      x = -10, center_x = 0, direction = "split"),
-    direction = "y") +
+    size = 6, seed = 359, segment.colour = NA, nudge_x = 22) +
   ggplot2::scale_fill_manual(
     values = c(
       "RICH" = "#ffbf00",
@@ -396,13 +406,15 @@ oval +
       "CARL" = "#003049")) +
   ggplot2::theme_void() +
   ggplot2::theme(
-    legend.position = "top")
+    legend.position = "top",
+    legend.title = ggplot2::element_blank(),
+    legend.text = ggplot2::element_text(size = ggplot2::rel(2)))
 
 ```
 
 ## Visualising possession chains
 
-```{r plot_chain_C, echo = FALSE, fig.height = 8}
+```{r plot_chain_C, echo = FALSE, cache = TRUE, fig.height = 8}
 
 # Chain C (chain 9)
 oval +
@@ -425,6 +437,22 @@ oval +
       yend = disp_y_end),
     linewidth = 1, lineend = "round", linejoin = "mitre",
     arrow = ggplot2::arrow(length = grid::unit(0.015, "npc"))) +
+  ggrepel::geom_label_repel(
+    data = chains_snippet_tidy |>
+      dplyr::filter(chain_C == TRUE & possession_num == 1),
+    ggplot2::aes(
+      x = disp_x_start,
+      y = disp_y_start,
+      label = label_chain_c),
+    size = 6, seed = 359, segment.colour = NA, nudge_y = -10) +
+  ggrepel::geom_label_repel(
+    data = chains_snippet_tidy |>
+      dplyr::filter(chain_C == TRUE & possession_num != 1),
+    ggplot2::aes(
+      x = disp_x_start,
+      y = disp_y_start,
+      label = label_chain_c),
+    size = 6, seed = 359, segment.colour = NA, nudge_y = 10) +
   ggplot2::scale_fill_manual(
     values = c(
       "RICH" = "#ffbf00",
@@ -437,23 +465,47 @@ oval +
     drop = FALSE) +
   ggplot2::theme_void() +
   ggplot2::theme(
-    legend.position = "top")
+    legend.position = "top",
+    legend.title = ggplot2::element_blank(),
+    legend.text = ggplot2::element_text(size = ggplot2::rel(2)))
 
 ```
 
-## From counts to sequences
+## Network analysis in Australian football {.smaller}
 
-  - Taylor et al., Network analysis in AFL
+@taylor2020: https://doi.org/10.1080/02640414.2020.1740490
 
-## Basketball
+Aims: Construct networks using possession chain data, and examine how their network characteristics relate to game outcomes
+
+Data: ~150,000 possession events from all matches played in the 2015 AFL season (206 games, regular season and finals)
+
+Network analysis: Edge list --> Weighted edge --> Adjacency matrix --> Determine network metrics (degree centrality, density, cluster coefficient, entropy)
+
+Results: The most direct ball movement patterns (i.e., low network density values) were observed for the
+most desirable outcomes. More successful kick-in chains exhibited less predictable ball movement patterns as indicated by high entropy values.
+
+Key take-away: Using sequential possession data enables quantification of how players on the same team interact with one another - going beyond qualitative judgments of whether a team seems predictable, direct, heavily reliant on a few key players, etc.
+
+## Network analysis in basketball {.smaller}
 
 @fewell2012:
 https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047445
+
+Aims: In basketball, do individual teams have specific network signatures? Are different network metrics associated with variation in actual play strategy?
+
+Data: Examined the offensive ball sequences by National Basketball Association (NBA) teams during the first round of the 2010 playoffs.
+
+Results: The compiled network structure showed a centralized ball distribution pattern with the point guard in a leadership role. However, individual play-off teams showed variation in their relative involvement of other players/positions in ball distribution, reflected quantitatively by differences in clustering and degree centrality.
+
+In the context of the 2010 play-offs, the values of clustering (connectedness across players) and network entropy (unpredictability of ball movement) had the most consistent association with team advancement.
+
+Key take-aways: The passing patterns of teams can be quantified into distinguishable network "signatures" - valuable for opposition analysis. Clustering coefficient may have had a stronger association with the performance outcome with a much smaller number of players on court compared to AFL (5 vs. 18). Unpredictability again seen as important, greater unpredictability among teams that advanced to the second round of playoffs.
 
 ## From manual to automated video annotation
 
 - Early days: Manual notational analysis to derive new features
   - https://www.taylorfrancis.com/chapters/edit/10.4324/9781315776743-6/overview-development-notation-analysis-mike-hughes
+  - https://www.researchgate.net/publication/5555243_A_Test_to_Evaluate_the_Physical_Impact_on_Technical_Performance_in_Soccer
 
 ## From manual to automated video annotation
 
@@ -482,10 +534,6 @@ NFL game analysis / rules team (Prof Michael Lopez)
 ## Applied examples: MLB
 
 MLB: Baseball Savant - https://baseballsavant.mlb.com/
-
-## Applied examples: Cricket
-
-Cricket: Hawk-Eye
 
 ## Continuing to mature as a profession {.smaller}
 
@@ -518,6 +566,7 @@ lacks sufficient mathematical / statistical knowledge to analyse in
 sophisticated and robust ways ("we don't know what we don't know") --
 opportunities for those with specialist skill sets to make an impact
 
-Volume of available data has grown rapidly, but have we lost some of our discernment in the process?
+Volume of available data has grown rapidly, but have we lost some of our
+discernment in the process?
 
 ## References
