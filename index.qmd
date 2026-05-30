@@ -1,7 +1,7 @@
 ---
 title: "The awkward, exciting adolescence of sports analytics"
-subtitle: "Dr Jacquie Tran"
-author: "1 June 2026 | ANZIAM Vic One-Day Workshop"
+subtitle: "Dr Jacquie Tran | 1 June 2026"
+author: "ANZIAM Vic One-Day Workshop"
 format:
   revealjs:
     theme: [night, custom.scss]
@@ -9,7 +9,8 @@ format:
     center-title-slide: false
 title-slide-attributes:
   data-background-image: images/jay-miller-DBurdz7Dm8Q-unsplash_edited_blue.png
-  data-background-size: contain
+  data-background-size: cover
+  data-background-position: 2% 98%, center
 filters:
   - timeline
   - custom-callout
@@ -21,7 +22,7 @@ bibliography: references.bib
 
 ## A fish out of water
 
-A multidisciplinary sport scientist
+A multidisciplinary, applied sport scientist
 
 . . .
 
@@ -45,34 +46,57 @@ From the ANZIAM website:
 My goal is to shed light on [how mathematics and statistics is used in
 sport]{.cyan} today, and perhaps entice you to work in this space in future!
 
+## The spark
+
+::::: columns
+::: {.column .incremental width="60%"}
+
+- Athens 2004 Olympic & Paralympic Games
+- Novel, biomimetic textile developed for swimsuits
+- Fiona Fairhurst - Inspired by sharks' dermal denticles
+- Reduced drag, greater thrust (@oeffner2012)
+
+:::
+
+::: {.column width="40%"}
+![](images/6382565.jpg){.absolute top="10%" right="0" height="30%"}
+![](images/Dermal Denticles colour SEM.jpg){.absolute top="50%" right="0" height="40%"}
+:::
+:::::
+
 ## 
 
 :::::::: {.timeline .vertical .tl-label-banner .fragment-slide}
-::: {.event data-label="2010 - Deakin University" style="--tl-color-accent: #402D8B;"}
-**PhD in Applied Sports Physiology** <br /> <br /> Started learning about [mixed
+::: {.event data-label="2009 - Deakin University" style="--tl-color-accent: #23054C;"}
+**Honours - Sports Biomechanics**<br /><br />
+Working with [wearable sensors]{.yellow} developed for sport and [3-D motion capture]{.yellow}
+:::
+
+::: {.event .fragment data-label="2010 - Deakin University" style="--tl-color-accent: #420D6D;"}
+**PhD - Applied Sports Physiology** <br /> <br /> Started learning about [mixed
 models]{.yellow} and [how to code in R]{.yellow}
 :::
 
-::: {.event .fragment data-label="2015 - Geelong Cats FC & Deakin University" style="--tl-color-accent: #3E7CA3;"}
+::: {.event .fragment data-label="2015 - Geelong Cats FC & Deakin University" style="--tl-color-accent: #5D1679;"}
 **Research Fellow** <br /> <br /> Analytical support across sport science,
 opposition analysis, recruiting <br /> <br /> Research projects using [network
 analysis]{.yellow} and [decision tree models]{.yellow}
 :::
 
-::: {.event .fragment data-label="2018 - High Performance Sport NZ" style="--tl-color-accent: #2A7A57;"}
+::: {.event .fragment data-label="2018 - High Performance Sport NZ" style="--tl-color-accent: #590D4B;"}
 **Senior Insights Researcher (initially)**<br /> **Head of Intelligence
 (later)** <br /> <br /> My first foray into longitudinal qualitative research
 <br /> <br /> Developed [data engineering]{.yellow} knowledge, applied [text
 mining]{.yellow} techniques
 :::
 
-::: {.event .fragment data-label="2023 - Callaghan Innovation" style="--tl-color-accent: #B76B15;"}
+::: {.event .fragment data-label="2023 - Callaghan Innovation" style="--tl-color-accent: #A22A60;"}
 **Strategic Insights Analyst** <br /> <br /> Individual contributor role, using
 [quant and qual methods]{.yellow} for reporting and internal research / analysis
 projects<br /> <br /> A new context, beyond sport
 :::
 
-::: {.event .fragment data-label="2026 - La Trobe University" style="--tl-color-accent: #B61624;"}
+::: {.event .fragment data-label="2026 - La Trobe University" style="--tl-color-accent: #F42A34;"}
 **Lecturer in Sports Analytics & Performance Analysis** <br /> <br /> Sharing
 what I've learned through teaching <br /> <br /> Pursuing research to learn and
 apply [Bayesian modelling]{.yellow}, [network analysis]{.yellow}, and
@@ -80,23 +104,33 @@ apply [Bayesian modelling]{.yellow}, [network analysis]{.yellow}, and
 :::
 ::::::::
 
-## Rapid growth into "awkward adolescence" {.smaller}
+##  {background-color="#0e172b" background-image="images/christine-lENhFCC2tGY-unsplash.jpg" background-opacity="0.7"}
 
-Technology changes:
+[**A young field growing rapidly**]{.mimic-title .absolute left="12%" top="15%"}
 
-- Video
-- Wearable and portable technologies
-- Count statistics to detailed event data (play-by-play)
-- High-speed video
-- Multi-camera OTS
+## Technology changes
 
-Analytical practices:
+Increased use of video
 
-- Notational analysis
-- Programmatic approaches to working with data
-- Accessibility of statistical modelling outside of academia
-- Computer vision
-- Integrating data from multiple sources (across disciplines)
+Commercial accessibility of wearable and portable technologies
+
+Moving beyond count statistics to detailed event records (play-by-play)
+
+Multi-camera optical tracking systems (e.g., Hawk-Eye)
+
+## Data and analysis practices
+
+Notational analysis
+
+Programmatic approaches to working with data
+
+Accessibility of statistical modelling outside of academia
+
+Computer vision
+
+Data storage - Integrating data from multiple sources (across disciplines)
+
+## Education and industry changes
 
 Dedicated tertiary courses for sports analytics
 
@@ -105,9 +139,47 @@ and accessibility of data supplied by governing bodies and broadcast partners
 
 Competitor behaviours
 
-##  {background-color="#0e172b" background-image="images/Stoppage_in_an_AFL_game.jpg" background-opacity="0.7"}
+## "Awkward adolescence" {.smaller}
 
-[**From counts to sequences**]{.mimic-title .absolute left="51%" top="15%"}
+Growth in sports analytics has been rapid but uneven
+
+- Some sports / orgs have been faster to adapt / implement
+- Resourcing differences between sports and organisations within sports
+
+Sometimes growing in ways we're not quite ready for ("running before walking")
+
+- E.g., focus on hiring data scientists / analytics specialists without
+  understanding and investing in infrastructure and support functions upstream
+  (IT, data engineering, data governance)
+- Varying maturity in leaders' skills in using and interpreting data to inform
+  their decisions
+
+Role clarity and integration within a performance team
+
+- Looking for the mix of domain, interpersonal, data and analytics, and computer
+  science / programming skills
+- Is analytics a distinct role? Is it better to upskill an SME? Is it just sport
+  science with larger data sets?
+
+Even still, there is a lot that is exciting about [change and maturation]{.yellow}!
+
+## {background-color="#0e172b" background-image="images/pawel-czerwinski-eybM9n4yrpE-unsplash.jpg" background-opacity="0.7"}
+
+[**Signal processing**]{.mimic-title .absolute left="51%" top="15%"}
+
+## Signal processing
+
+Advancements in wearable technology
+
+Need for signal processing techniques to work with noisy data, identify meaningful activities (e.g., based on movement intensity, accelerations / decelerations, sleep phases)
+
+## {background-color="#0e172b" background-image="images/" background-opacity="0.7"}
+
+[**Fluid dynamics**]{.mimic-title .absolute left="51%" top="15%"}
+
+## {background-color="#0e172b" background-image="images/Stoppage_in_an_AFL_game.jpg" background-opacity="0.7"}
+
+[**Analysing patterns of play**]{.mimic-title .absolute left="51%" top="15%"}
 
 ## Counts of game actions
 
@@ -257,7 +329,7 @@ Enables analysis of actions in sequence
 
 ## Visualising possession chains
 
-```{r plot_afl_oval, echo = FALSE, cache = TRUE, warning = FALSE, message = FALSE}
+```{r plot_afl_oval, echo=FALSE, message=FALSE, warning=FALSE, cache=TRUE}
 
 # Using code from: https://github.com/alittlefitness/afl_visual_analysis/blob/master/AFL%20Analysis%20app.R
 
@@ -475,31 +547,37 @@ oval +
 
 @taylor2020: https://doi.org/10.1080/02640414.2020.1740490
 
-Aims: Construct networks using possession chain data, and examine how their network characteristics relate to game outcomes
+Aims: Construct networks using possession chain data, and examine how their
+network characteristics relate to game outcomes
 
-Data: ~150,000 possession events from all matches played in the 2015 AFL season (206 games, regular season and finals)
+Data: \~150,000 possession events from all matches played in the 2015 AFL season
+(206 games, regular season and finals)
 
-Network analysis: Edge list --> Weighted edge --> Adjacency matrix --> Determine network metrics (degree centrality, density, cluster coefficient, entropy)
+Network analysis: Edge list --\> Weighted edge --\> Adjacency matrix --\>
+Determine network metrics (degree centrality, density, cluster coefficient,
+entropy)
 
-Results: The most direct ball movement patterns (i.e., low network density values) were observed for the
-most desirable outcomes. More successful kick-in chains exhibited less predictable ball movement patterns as indicated by high entropy values.
+Results: The most direct ball movement patterns (i.e., low network density
+values) were observed for the most desirable outcomes. More successful kick-in
+chains exhibited less predictable ball movement patterns as indicated by high
+entropy values.
 
-Key take-away: Using sequential possession data enables quantification of how players on the same team interact with one another - going beyond qualitative judgments of whether a team seems predictable, direct, heavily reliant on a few key players, etc.
+Key take-away: Using sequential possession data enables quantification of how
+players on the same team interact with one another - going beyond qualitative
+judgments of whether a team seems predictable, direct, heavily reliant on a few
+key players, etc.
 
-## Network analysis in basketball {.smaller}
+## From movement summaries to spatiotemporal analysis
 
-@fewell2012:
-https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0047445
+Background about GPS data
 
-Aims: In basketball, do individual teams have specific network signatures? Are different network metrics associated with variation in actual play strategy?
+- Progressing to: Spatiotemporal analyses to uncover tactical structures
+  - Seakins et al. https://www.mdpi.com/1424-8220/23/10/4891
+  - Raabe et al. https://doi.org/10.1080/02640414.2024.2414363
 
-Data: Examined the offensive ball sequences by National Basketball Association (NBA) teams during the first round of the 2010 playoffs.
+## {background-color="#0e172b" background-image="images/" background-opacity="0.7"}
 
-Results: The compiled network structure showed a centralized ball distribution pattern with the point guard in a leadership role. However, individual play-off teams showed variation in their relative involvement of other players/positions in ball distribution, reflected quantitatively by differences in clustering and degree centrality.
-
-In the context of the 2010 play-offs, the values of clustering (connectedness across players) and network entropy (unpredictability of ball movement) had the most consistent association with team advancement.
-
-Key take-aways: The passing patterns of teams can be quantified into distinguishable network "signatures" - valuable for opposition analysis. Clustering coefficient may have had a stronger association with the performance outcome with a much smaller number of players on court compared to AFL (5 vs. 18). Unpredictability again seen as important, greater unpredictability among teams that advanced to the second round of playoffs.
+[**Video annotation**]{.mimic-title .absolute left="51%" top="15%"}
 
 ## From manual to automated video annotation
 
@@ -512,54 +590,14 @@ Key take-aways: The passing patterns of teams can be quantified into distinguish
 - Progressing to: Computer vision
   - Hall et al. https://link.springer.com/article/10.1007/s00521-020-05485-3
 
-## From movement summaries to spatiotemporal analysis
-
-- Early days: Understanding physical demands of training and competition
-  - Physical demands in soccer:
-    https://researchportal.murdoch.edu.au/esploro/outputs/journalArticle/The-physical-demands-of-professional-soccer/991005544546907891
-
-## From movement summaries to spatiotemporal analysis
-
-- Progressing to: Spatiotemporal analyses to uncover tactical structures
-  - Seakins et al. https://www.mdpi.com/1424-8220/23/10/4891
-  - Raabe et al. https://doi.org/10.1080/02640414.2024.2414363
-
-## Applied examples: NFL
+## An industry example: NFL
 
 NFL game analysis / rules team (Prof Michael Lopez)
 
 - https://www.youtube.com/watch?v=\_zNGyyrG3_8
 - https://knowledge.wharton.upenn.edu/podcast/moneyball/scaling-insights-how-big-data-and-simulation-are-transforming-the-nfl/
 
-## Applied examples: MLB
-
-MLB: Baseball Savant - https://baseballsavant.mlb.com/
-
-## Continuing to mature as a profession {.smaller}
-
-[Challenges?]{.yellow}
-
-Growth in sports analytics has been rapid but uneven
-
-- Some sports / orgs have been faster to adapt / implement
-- Resourcing differences between sports and organisations within sports
-
-Sometimes growing in ways we're not quite ready for ("running before walking")
-
-- E.g., focus on hiring data scientists / analytics specialists without
-  understanding and investing in infrastructure and support functions upstream
-  (IT, data engineering, data governance)
-- Varying maturity in leaders' skills in using and interpreting data to inform
-  their decisions
-
-Role clarity and integration within a performance team
-
-- Looking for the mix of domain, interpersonal, data and analytics, and computer
-  science / programming skills
-- Is analytics a distinct role? Is it better to upskill an SME? Is it just sport
-  science with larger data sets?
-
-[Opportunities?]{.yellow}
+## What might the future hold?
 
 Many rich sources of data across disciplines, although the industry generally
 lacks sufficient mathematical / statistical knowledge to analyse in
