@@ -17,6 +17,7 @@ filters:
 editor: 
   markdown: 
     wrap: 80
+from: markdown+emoji
 bibliography: references.bib
 ---
 
@@ -48,28 +49,46 @@ sport]{.cyan} today, and perhaps entice you to work in this space in future!
 
 ## The spark
 
-::::: columns
-::: {.column .incremental width="60%"}
+::::::::: columns
+::::::: {.column width="60%"}
+Athens 2004 Olympic & Paralympic Games
 
-- Athens 2004 Olympic & Paralympic Games
-- Novel, biomimetic textile developed for swimsuits
-- Fiona Fairhurst - Inspired by sharks' dermal denticles
-- Reduced drag, greater thrust (@oeffner2012)
+<br />
 
+:::::: inline-fragment
+::: fragment
+Novel, biomimetic textile developed for swimsuits
 :::
+
+<br />
+
+::: fragment
+Fiona Fairhurst - Inspired by shark denticles
+:::
+
+<br />
+
+::: fragment
+@oeffner2012:
+<br />
+Reduced drag, greater thrust with Speedo FSII
+:::
+::::::
+:::::::
 
 ::: {.column width="40%"}
 ![](images/6382565.jpg){.absolute top="10%" right="0" height="30%"}
-![](images/Dermal Denticles colour SEM.jpg){.absolute top="50%" right="0" height="40%"}
+![](images/Dermal%20Denticles%20colour%20SEM.jpg){.absolute top="50%" right="0"
+height="40%"}
 :::
-:::::
+:::::::::
 
 ## 
 
-:::::::: {.timeline .vertical .tl-label-banner .fragment-slide}
+::::::::: {.timeline .vertical .tl-label-banner .fragment-slide}
 ::: {.event data-label="2009 - Deakin University" style="--tl-color-accent: #23054C;"}
-**Honours - Sports Biomechanics**<br /><br />
-Working with [wearable sensors]{.yellow} developed for sport and [3-D motion capture]{.yellow}
+**Honours - Sports Biomechanics**<br /><br /> Working with [wearable
+sensors]{.yellow} developed for sport and [3-D motion capture]{.yellow}
 :::
 
 ::: {.event .fragment data-label="2010 - Deakin University" style="--tl-color-accent: #420D6D;"}
@@ -102,84 +121,237 @@ what I've learned through teaching <br /> <br /> Pursuing research to learn and
 apply [Bayesian modelling]{.yellow}, [network analysis]{.yellow}, and
 [clustering techniques]{.yellow}
 :::
-::::::::
+:::::::::
 
 ##  {background-color="#0e172b" background-image="images/christine-lENhFCC2tGY-unsplash.jpg" background-opacity="0.7"}
 
-[**A young field growing rapidly**]{.mimic-title .absolute left="12%" top="15%"}
+[**A young field growing rapidly**]{.mimic-title .absolute right="18.5%"
+top="15%"}
 
 ## Technology changes
 
+::::::::: columns
+::::::: {.column width="60%"}
 Increased use of video
 
-Commercial accessibility of wearable and portable technologies
+<br />
 
+:::::: inline-fragment
+::: fragment
+Wearable and portable technologies
+
+<br />
+:::
+
+::: fragment
 Moving beyond count statistics to detailed event records (play-by-play)
 
-Multi-camera optical tracking systems (e.g., Hawk-Eye)
+<br />
+:::
+
+::: fragment
+Multi-camera optical tracking systems
+<br />(e.g., Hawk-Eye)
+:::
+::::::
+:::::::
+
+::: {.column .fragment width="40%"}
+![](images/hawk-eye.jpg){.absolute top="10%" right="0" height="60%"}
+:::
+:::::::::
 
 ## Data and analysis practices
 
-Notational analysis
-
+::::::::: columns
+::::::: {.column width="60%"}
 Programmatic approaches to working with data
 
-Accessibility of statistical modelling outside of academia
+<br />
 
-Computer vision
+:::::: inline-fragment
+::: fragment
+Accessibility of statistical software
 
-Data storage - Integrating data from multiple sources (across disciplines)
+<br />
+:::
+
+::: fragment
+Advancements in computer vision capabilities
+
+<br />
+:::
+
+::: fragment
+Improved data storage practices enabling data to be integrated from multiple sources
+:::
+::::::
+:::::::
+
+::: {.column width="40%"}
+![](images/vis-sportscode.png){.absolute top="10%" right="0" height="45%"}
+:::
+:::::::::
 
 ## Education and industry changes
 
+::::::::: columns
+::::::: {.column width="60%"}
+Substantial growth in private sports data and technology providers
+
+<br />
+
+:::::: inline-fragment
+::: fragment
+More data supplied by governing bodies and broadcast partners
+
+<br />
+:::
+
+::: fragment
+Competitor practices
+
+<br />
+:::
+
+::: fragment
 Dedicated tertiary courses for sports analytics
+:::
+::::::
+:::::::
 
-Growth in private sports data and technology providers, advancements in volume
-and accessibility of data supplied by governing bodies and broadcast partners
+::: {.column width="40%"}
+![](images/spurs_shots.png){.absolute top="10%" right="0" height="55%"}
+:::
+:::::::::
 
-Competitor behaviours
+## "Awkward adolescence"
 
-## "Awkward adolescence" {.smaller}
+Growth in sports analytics has been rapid but [uneven]{.cyan}
 
-Growth in sports analytics has been rapid but uneven
+<br />
 
-- Some sports / orgs have been faster to adapt / implement
-- Resourcing differences between sports and organisations within sports
+. . .
 
-Sometimes growing in ways we're not quite ready for ("running before walking")
+Sometimes growing in ways we're not ready for - ["running before we can walk"]{.cyan}
 
-- E.g., focus on hiring data scientists / analytics specialists without
-  understanding and investing in infrastructure and support functions upstream
-  (IT, data engineering, data governance)
-- Varying maturity in leaders' skills in using and interpreting data to inform
-  their decisions
+<br />
 
-Role clarity and integration within a performance team
+. . .
 
-- Looking for the mix of domain, interpersonal, data and analytics, and computer
-  science / programming skills
-- Is analytics a distinct role? Is it better to upskill an SME? Is it just sport
-  science with larger data sets?
+[Role clarity]{.cyan} and integration within a performance team
 
-Even still, there is a lot that is exciting about [change and maturation]{.yellow}!
+<br />
 
-## {background-color="#0e172b" background-image="images/pawel-czerwinski-eybM9n4yrpE-unsplash.jpg" background-opacity="0.7"}
+. . .
 
-[**Signal processing**]{.mimic-title .absolute left="51%" top="15%"}
+<hr />
+<br />
 
-## Signal processing
+Even still, there is a lot that is exciting about [change and
+maturation]{.yellow}!
 
-Advancements in wearable technology
+##  {background-color="#0e172b" background-image="images/pawel-czerwinski-eybM9n4yrpE-unsplash.jpg" background-opacity="0.7"}
 
-Need for signal processing techniques to work with noisy data, identify meaningful activities (e.g., based on movement intensity, accelerations / decelerations, sleep phases)
+[**Signal processing**]{.mimic-title .absolute right="0" top="0"}
 
-## {background-color="#0e172b" background-image="images/" background-opacity="0.7"}
+## Processing signals from wearable / portable devices
 
-[**Fluid dynamics**]{.mimic-title .absolute left="51%" top="15%"}
+![](images/vector-s7.png){.absolute left="15%" height="45%"}
 
-## {background-color="#0e172b" background-image="images/Stoppage_in_an_AFL_game.jpg" background-opacity="0.7"}
+::::: inline-fragment
+::: fragment
+![](images/Trident-Axes-HQ.jpg){.absolute right="15%" height="45%"}
+:::
 
-[**Analysing patterns of play**]{.mimic-title .absolute left="51%" top="15%"}
+::: fragment
+![](images/actiwatch-2.jpeg){.absolute left="30%" top="60%" height="40%"}
+:::
+:::::
+
+## Example: Identifying sleep stages from actigraphy
+
+@acker2021:
+
+![](images/actigraphy_signals.png){.absolute left="25%" height="80%"}
+
+##  {background-color="#0e172b" background-image="images/ski-jumping.png" background-opacity="0.7"}
+
+[**Fluid dynamics**]{.mimic-title .absolute left="17%" top="25%"
+style="rotate: 10deg;"}
+
+## Example: Individualised suits for track cyclists
+
+::::::::: columns
+::::::: {.column width="60%"}
+@hpsnz2025:
+
+Collaboration between
+
+- Cycling NZ
+- High Performance Sport NZ's Goldmine Innovation team
+- One Studio
+
+<br />
+
+:::::: inline-fragment
+::: fragment
+Individualised approach to textile development, considering rider shape and position on bike
+:::
+
+<br />
+
+::: fragment
+Tunnel and track testing - [Reduced aerodynamic drag]{.cyan} compared to previous suits
+:::
+::::::
+:::::::
+
+::: {.column width="40%"}
+![](images/ellesse-andrews.jpg){.absolute top="10%" right="0" height="80%"}
+:::
+:::::::::
+
+## Example: Sit ski design
+
+::::::::: columns
+::::::: {.column width="60%"}
+@hpsnz2018:
+
+Collaboration between
+
+- Snow Sports NZ
+- High Performance Sport NZ's Goldmine Innovation team
+- Dynamic Composites
+
+<br />
+
+:::::: inline-fragment
+::: fragment
+Re-designed sit ski [reduced drag by 1.5%]{.cyan}
+:::
+
+<br />
+
+::: fragment
+PyeongChang 2018, Downhill Sitting:
+<br />
+Corey Peters won bronze in 1:26.01
+<br />
+Only [0.22 seconds ahead]{.cyan} of 4th! (0.26% diff.)
+:::
+::::::
+:::::::
+
+::: {.column width="40%"}
+![](images/corey-peters.png){.absolute top="10%" right="0" height="70%"}
+:::
+:::::::::
+
+##  {background-color="#0e172b" background-image="images/north.jpg" background-opacity="0.7"}
+
+[**Patterns of play**]{.mimic-title .absolute left="0" top="30%"
+style="rotate: -30deg;"}
 
 ## Counts of game actions
 
@@ -567,7 +739,7 @@ players on the same team interact with one another - going beyond qualitative
 judgments of whether a team seems predictable, direct, heavily reliant on a few
 key players, etc.
 
-## From movement summaries to spatiotemporal analysis
+## Spatiotemporal analysis
 
 Background about GPS data
 
@@ -575,36 +747,135 @@ Background about GPS data
   - Seakins et al. https://www.mdpi.com/1424-8220/23/10/4891
   - Raabe et al. https://doi.org/10.1080/02640414.2024.2414363
 
-## {background-color="#0e172b" background-image="images/" background-opacity="0.7"}
+##  {background-color="#0e172b" background-image="images/norbert-braun-rbUmyKlVyZU-unsplash.jpg" background-opacity="0.7"}
 
-[**Video annotation**]{.mimic-title .absolute left="51%" top="15%"}
+[**Deriving features from visual information**]{.mimic-title .absolute
+left="49%" top="15%"}
 
-## From manual to automated video annotation
+## Important origins: Live notational analysis
 
-- Early days: Manual notational analysis to derive new features
-  - https://www.taylorfrancis.com/chapters/edit/10.4324/9781315776743-6/overview-development-notation-analysis-mike-hughes
-  - https://www.researchgate.net/publication/5555243_A_Test_to_Evaluate_the_Physical_Impact_on_Technical_Performance_in_Soccer
+::::: columns
+::: {.column width="50%"}
+Example from @rostgaard2008:
 
-## From manual to automated video annotation
+Notational analysis by hand of 1 player, prior to and in contact with the ball
+during a soccer match.
+:::
 
-- Progressing to: Computer vision
-  - Hall et al. https://link.springer.com/article/10.1007/s00521-020-05485-3
+::: {.column width="50%"}
+![](images/andersen-hand-notation-analysis.png){.absolute right="5%"
+height="85%"}
+:::
+:::::
 
-## An industry example: NFL
+## Software-based notational analysis
 
-NFL game analysis / rules team (Prof Michael Lopez)
+![](images/swimming_notation.jpg){.absolute left="10%" height="70%"}
 
-- https://www.youtube.com/watch?v=\_zNGyyrG3_8
-- https://knowledge.wharton.upenn.edu/podcast/moneyball/scaling-insights-how-big-data-and-simulation-are-transforming-the-nfl/
+## Automated video annotation
 
-## What might the future hold?
+Example: The Deep Detector for Actions and Swimmer Heads system (DeepDASH)
+proposed by @hall2020
 
-Many rich sources of data across disciplines, although the industry generally
-lacks sufficient mathematical / statistical knowledge to analyse in
-sophisticated and robust ways ("we don't know what we don't know") --
-opportunities for those with specialist skill sets to make an impact
+![](images/hall-deepdash.png){.absolute left="15%" height="70%"}
 
-Volume of available data has grown rapidly, but have we lost some of our
-discernment in the process?
+##  {background-color="#0e172b" background-image="images/nfl_game.jpeg" background-opacity="0.7"}
+
+[**An industry example**]{.mimic-title .absolute left="50%" top="75%"}
+
+## National Football League (NFL)
+
+::::::: columns
+::::: {.column width="50%"}
+[Prof Michael Lopez]{.cyan}
+
+Now: Senior Director of Football Data & Analytics, NFL <br /> <br />
+
+<hr />
+
+<br />
+
+:::: inline-fragment
+::: fragment
+Previously:
+
+- Bachelor in Mathematics \| Bates College
+- Masters in Statistics \| University of Massachusetts, Amherst
+- PhD in Biostatistics \| Brown University
+:::
+::::
+:::::
+
+::: {.column width="50%"}
+![](images/lopez-headshot.jpg){.absolute right="5%" height="75%"}
+:::
+:::::::
+
+## National Football League (NFL)
+
+![](images/nfl.jpg){.absolute right="5%" height="80%"}
+
+@lopez2026:
+
+> ["Our job is to make the game better."]{.yellow}
+
+:::: inline-fragment
+::: fragment
+Competitiveness of the game
+
+Officiating
+
+Health and safety
+
+Pace of play
+
+Use of modern tech to improve the game
+:::
+::::
+
+## Example: Late-game strategy in the NFL
+
+@nflops2021:
+
+![](images/run_rate_q4.svg){.absolute left="15%" height="80%"}
+
+## 
+
+![](images/big-data-bowl-transparent.png){.absolute left="25%" height="80%"}
+
+##  {background-color="#0e172b" background-image="images/mark-fletcher-brown-HVrhFfk2ZSQ-unsplash.jpg" background-opacity="0.7"}
+
+[**What might the future hold?**]{.mimic-title .absolute right="10%" top="30%"}
+
+## Opportunities
+
+Many rich sources of data across scientific disciplines, although...
+
+. . .
+
+Better mathematical and statistical knowledge needed to analyse data in robust and efficient ways - ["We don't know what we don't know"]{.yellow}
+
+. . .
+
+<br />
+
+Volume of available data has grown rapidly. But [what really matters?]{.yellow}
+
+. . .
+
+<br />
+
+Opportunities for leaders to [use information and analysis more effectively]{.yellow}
+
+##  {background-color="#0e172b" background-image="images/joshua-kantarges-N_7Kb4hpaoU-unsplash.jpg" background-opacity="0.15"}
+
+::: {.absolute left="20%" top="25%" style="font-size:1.5em; padding: 0.5em 1em; background-color: rgba(0, 0, 0, 0.8);"}
+**Dr Jacquie Tran**
+<br />
+<br />
+:globe_with_meridians: www.jacquietran.com
+<br />
+:email: jacquie.tran@latrobe.edu.au
+:::
 
 ## References
