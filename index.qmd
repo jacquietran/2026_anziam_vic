@@ -282,40 +282,6 @@ maturation]{.yellow}!
 [**Fluid dynamics**]{.mimic-title .absolute left="17%" top="25%"
 style="rotate: 10deg;"}
 
-## Example: Individualised suits for track cyclists
-
-:::::::: columns
-:::::: {.column width="60%"}
-@hpsnz2025:
-
-Collaboration between
-
-- Cycling NZ
-- High Performance Sport NZ's Goldmine Innovation team
-- One Studio
-
-<br />
-
-::::: inline-fragment
-::: fragment
-Individualised approach to textile development, considering rider shape and
-position on bike
-:::
-
-<br />
-
-::: fragment
-Tunnel and track testing - [Reduced aerodynamic drag]{.cyan} compared to
-previous suits
-:::
-:::::
-::::::
-
-::: {.column width="40%"}
-![](images/ellesse-andrews.jpg){.absolute top="10%" right="0" height="80%"}
-:::
-::::::::
-
 ## Example: Sit ski design
 
 :::::::: columns
@@ -716,33 +682,76 @@ oval +
 
 ```
 
-## Network analysis in Australian football {.smaller}
+## Network analysis in Australian football
 
-@taylor2020: https://doi.org/10.1080/02640414.2020.1740490
+:::::::: columns
+:::::: {.column width="60%"}
+@taylor2020 - Examining possession chains as player interaction networks
 
-Aims: Construct networks using possession chain data, and examine how their
-network characteristics relate to game outcomes
+<br />
 
-Data: \~150,000 possession events from all matches played in the 2015 AFL season
+::::: inline-fragment
+::: fragment
+Focus: Kick-in chains from all matches played in the 2015 AFL season
 (206 games, regular season and finals)
 
-Network analysis: Edge list --\> Weighted edge --\> Adjacency matrix --\>
-Determine network metrics (degree centrality, density, cluster coefficient,
-entropy)
+<br />
+:::
 
-Results: The most direct ball movement patterns (i.e., low network density
-values) were observed for the most desirable outcomes. More successful kick-in
-chains exhibited less predictable ball movement patterns as indicated by high
-entropy values.
+::: fragment
+Analytical process:
 
-Key take-away: Using sequential possession data enables quantification of how
-players on the same team interact with one another - going beyond qualitative
-judgments of whether a team seems predictable, direct, heavily reliant on a few
-key players, etc.
+- Edge list
+- Adjacency matrix
+- Visualise possession networks as sociograms
+- Calculate network metrics: Degree centrality, density, cluster coefficient,
+entropy
+:::
+:::::
+::::::
+
+::: {.column width="40%"}
+![](images/kickin.jpg){.absolute top="10%" right="0" height="40%"}
+:::
+::::::::
+
+## Example: Sociogram for one AFL team
+
+![](images/taylor_sociogram.png){.absolute left="15%" height="70%"}
+
+## A useful method for quantifying passing interactions
+
+More successful kick-in chains:
+
+:::::: inline-fragment
+::: fragment
+- Comprised more direct ball movement - [lower network density]{.yellow}
+:::
+
+::: fragment
+- Were less predictable - [higher entropy]{.yellow}
+:::
+::::::
+
+:::::: inline-fragment
+::: fragment
+<br />
+<br />
+
+Key take-aways:
+
+- By analysing sequential possession data as interaction networks, we can [quantify patterns]{.cyan} in passing between players
+:::
+::: fragment
+- Useful for [testing beliefs]{.cyan} based on visual judgments, [scouting opponents]{.cyan}
+:::
+::::::
 
 ## Spatiotemporal analysis
 
 @krampe2026 - Using positional tracking data to analyse team formations
+
+. . .
 
 ![](images/krampe.png){.absolute left="15%" height="70%"}
 
