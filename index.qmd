@@ -69,9 +69,7 @@ Fiona Fairhurst - Inspired by shark denticles
 <br />
 
 ::: fragment
-@oeffner2012:
-<br />
-Reduced drag, greater thrust with Speedo FSII
+@oeffner2012: <br /> Reduced drag, greater thrust with Speedo FSII
 :::
 ::::::
 :::::::
@@ -150,8 +148,7 @@ Moving beyond count statistics to detailed event records (play-by-play)
 :::
 
 ::: fragment
-Multi-camera optical tracking systems
-<br />(e.g., Hawk-Eye)
+Multi-camera optical tracking systems <br />(e.g., Hawk-Eye)
 :::
 ::::::
 :::::::
@@ -183,7 +180,8 @@ Advancements in computer vision capabilities
 :::
 
 ::: fragment
-Improved data storage practices enabling data to be integrated from multiple sources
+Improved data storage practices enabling data to be integrated from multiple
+sources
 :::
 ::::::
 :::::::
@@ -231,13 +229,7 @@ Dedicated tertiary courses for sports analytics
 
 . . .
 
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
+<br /> <br /> <br /> <br /> <br /> <br /> <br />
 
 Growth in sports analytics has been rapid but [uneven]{.cyan}
 
@@ -245,7 +237,8 @@ Growth in sports analytics has been rapid but [uneven]{.cyan}
 
 . . .
 
-Sometimes growing in ways we're not ready for - ["running before we can walk"]{.cyan}
+Sometimes growing in ways we're not ready for - ["running before we can
+walk"]{.cyan}
 
 <br />
 
@@ -291,8 +284,8 @@ style="rotate: 10deg;"}
 
 ## Example: Individualised suits for track cyclists
 
-::::::::: columns
-::::::: {.column width="60%"}
+:::::::: columns
+:::::: {.column width="60%"}
 @hpsnz2025:
 
 Collaboration between
@@ -303,28 +296,30 @@ Collaboration between
 
 <br />
 
-:::::: inline-fragment
+::::: inline-fragment
 ::: fragment
-Individualised approach to textile development, considering rider shape and position on bike
+Individualised approach to textile development, considering rider shape and
+position on bike
 :::
 
 <br />
 
 ::: fragment
-Tunnel and track testing - [Reduced aerodynamic drag]{.cyan} compared to previous suits
+Tunnel and track testing - [Reduced aerodynamic drag]{.cyan} compared to
+previous suits
 :::
+:::::
 ::::::
-:::::::
 
 ::: {.column width="40%"}
 ![](images/ellesse-andrews.jpg){.absolute top="10%" right="0" height="80%"}
 :::
-:::::::::
+::::::::
 
 ## Example: Sit ski design
 
-::::::::: columns
-::::::: {.column width="60%"}
+:::::::: columns
+:::::: {.column width="60%"}
 @hpsnz2018:
 
 Collaboration between
@@ -335,7 +330,7 @@ Collaboration between
 
 <br />
 
-:::::: inline-fragment
+::::: inline-fragment
 ::: fragment
 Re-designed sit ski [reduced drag by 1.5%]{.cyan}
 :::
@@ -343,19 +338,16 @@ Re-designed sit ski [reduced drag by 1.5%]{.cyan}
 <br />
 
 ::: fragment
-PyeongChang 2018, Downhill Sitting:
-<br />
-Corey Peters won bronze in 1:26.01
-<br />
-Only [0.22 seconds ahead]{.cyan} of 4th! (0.26% diff.)
+PyeongChang 2018, Downhill Sitting: <br /> Corey Peters won bronze in 1:26.01
+<br /> Only [0.22 seconds ahead]{.cyan} of 4th! (0.26% diff.)
 :::
+:::::
 ::::::
-:::::::
 
 ::: {.column width="40%"}
 ![](images/corey-peters.png){.absolute top="10%" right="0" height="70%"}
 :::
-:::::::::
+::::::::
 
 ##  {background-color="#0e172b" background-image="images/north.jpg" background-opacity="0.7"}
 
@@ -750,11 +742,9 @@ key players, etc.
 
 ## Spatiotemporal analysis
 
-Background about GPS data
+@krampe2026 - Using positional tracking data to analyse team formations
 
-- Progressing to: Spatiotemporal analyses to uncover tactical structures
-  - Seakins et al. https://www.mdpi.com/1424-8220/23/10/4891
-  - Raabe et al. https://doi.org/10.1080/02640414.2024.2414363
+![](images/krampe.png){.absolute left="15%" height="70%"}
 
 ##  {background-color="#0e172b" background-image="images/norbert-braun-rbUmyKlVyZU-unsplash.jpg" background-opacity="0.7"}
 
@@ -862,7 +852,8 @@ Many rich sources of data across scientific disciplines, although...
 
 . . .
 
-Better mathematical and statistical knowledge needed to analyse data in robust and efficient ways - ["We don't know what we don't know"]{.yellow}
+Better mathematical and statistical knowledge needed to analyse data in robust
+and efficient ways - ["We don't know what we don't know"]{.yellow}
 
 . . .
 
@@ -874,19 +865,15 @@ Volume of available data has grown rapidly. But [what really matters?]{.yellow}
 
 <br />
 
-Opportunities for leaders to [use information and analysis more effectively]{.yellow}
+Opportunities for leaders to [use information and analysis more
+effectively]{.yellow}
 
 ##  {background-color="#0e172b" background-image="images/joshua-kantarges-N_7Kb4hpaoU-unsplash.jpg" background-opacity="0.15"}
 
 ::: {.absolute left="5%" top="25%" style="font-size:1.5em; padding: 0.5em 1em; background-color: rgba(0, 0, 0, 0.8);"}
-**Dr Jacquie Tran**
-<br />
-<br />
-:globe_with_meridians: www.jacquietran.com
-<br />
-:email: jacquie.tran@latrobe.edu.au
-<br/>
-:computer: https://jacquietran.github.io/2026_anziam_vic
+**Dr Jacquie Tran** <br /> <br /> :globe_with_meridians: www.jacquietran.com
+<br /> :email: jacquie.tran\@latrobe.edu.au <br/> :computer:
+https://jacquietran.github.io/2026_anziam_vic
 :::
 
 ## References
