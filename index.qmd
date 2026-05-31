@@ -27,7 +27,7 @@ A multidisciplinary, applied sport scientist
 
 . . .
 
-My usual audiences are...other people studying sport science and working in
+My usual audiences are...sport science students and other people working in
 sport!
 
 . . .
@@ -227,6 +227,18 @@ Dedicated tertiary courses for sports analytics
 
 ## "Awkward adolescence"
 
+![](images/jeans.png){.absolute top="10%" left="35%" height="30%"}
+
+. . .
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
 Growth in sports analytics has been rapid but [uneven]{.cyan}
 
 <br />
@@ -244,9 +256,6 @@ Sometimes growing in ways we're not ready for - ["running before we can walk"]{.
 <br />
 
 . . .
-
-<hr />
-<br />
 
 Even still, there is a lot that is exciting about [change and
 maturation]{.yellow}!
@@ -847,7 +856,7 @@ Use of modern tech to improve the game
 
 [**What might the future hold?**]{.mimic-title .absolute right="10%" top="30%"}
 
-## Opportunities
+## Opportunities {background-color="#0e172b" background-image="images/kai-gradert-0QWUm-wYXGA-unsplash.jpg" background-opacity="0.2"}
 
 Many rich sources of data across scientific disciplines, although...
 
@@ -869,13 +878,15 @@ Opportunities for leaders to [use information and analysis more effectively]{.ye
 
 ##  {background-color="#0e172b" background-image="images/joshua-kantarges-N_7Kb4hpaoU-unsplash.jpg" background-opacity="0.15"}
 
-::: {.absolute left="20%" top="25%" style="font-size:1.5em; padding: 0.5em 1em; background-color: rgba(0, 0, 0, 0.8);"}
+::: {.absolute left="5%" top="25%" style="font-size:1.5em; padding: 0.5em 1em; background-color: rgba(0, 0, 0, 0.8);"}
 **Dr Jacquie Tran**
 <br />
 <br />
 :globe_with_meridians: www.jacquietran.com
 <br />
 :email: jacquie.tran@latrobe.edu.au
+<br/>
+:computer: https://jacquietran.github.io/2026_anziam_vic
 :::
 
 ## References
